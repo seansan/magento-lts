@@ -142,7 +142,7 @@ class Mage_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
                         ->setQuery($query)
                         ->load()
                         ->getResults();
-                    $items = array_merge_recursive($items, $results);
+                    if (!empty($results)) $items = array_merge_recursive($items, $results);
                 }
                 $totalCount = sizeof($items);
             }

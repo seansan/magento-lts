@@ -72,8 +72,8 @@ class Mage_Adminhtml_Model_Search_Order extends Varien_Object
                 'id'                => 'order/1/'.$order->getId(),
                 'type'              => Mage::helper('adminhtml')->__('Order'),
                 'name'              => Mage::helper('adminhtml')->__('Order #%s', $order->getIncrementId()),
-                'description'       => $order->getBillingFirstname().' '.$order->getBillingLastname(),
-                'form_panel_title'  => Mage::helper('adminhtml')->__('Order #%s (%s)', $order->getIncrementId(), $order->getBillingFirstname().' '.$order->getBillingLastname()),
+                'description'       => $order->getCustomerFirstname().' '.$order->getCustomerLastname(),
+                'form_panel_title'  => Mage::helper('adminhtml')->__('Order #%s (%s)', $order->getIncrementId(), $order->getCustomerFirstname().' '.$order->getCustomerLastname()),
                 'url' => Mage::helper('adminhtml')->getUrl('*/sales_order/view', array('order_id'=>$order->getId())),
             );
         }

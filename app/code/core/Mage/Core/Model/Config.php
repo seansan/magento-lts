@@ -176,6 +176,14 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     protected $_canUseLocalModules = null;
 
     /**
+     * Flag which is used to prevent cache corruption 
+     * Coding suggestion comes from: https://github.com/convenient/magento-ce-ee-config-corruption-bug/blob/master/IMPROVEMENTS.md
+     *
+     * @var bool
+     */
+    protected $allowSaveCache = false;
+
+    /**
      * Active modules array per namespace
      * @var array
      */
@@ -356,6 +364,9 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
             $dbConf = $this->getResourceModel();
             $dbConf->loadToXml($this);
             Varien_Profiler::stop('config/load-db');
+            $this->allowSaveCache = true;
+        } else {
+            $this->allowSaveCache = false;
         }
         return $this;
     }
@@ -446,6 +457,10 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      */
     public function saveCache($tags=array())
     {
+        if (!$this->allowSaveCache) {
+            return $this;
+        }
+
         if (!Mage::app()->useCache('config')) {
             return $this;
         }
@@ -475,6 +490,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
         }
         unset($this->_cachePartsForSave);
         $this->_removeCache($cacheLockId);
+        $this->_allowCacheForInit = true; 
         return $this;
     }
 

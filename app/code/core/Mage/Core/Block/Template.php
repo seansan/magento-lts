@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -212,7 +212,7 @@ class Mage_Core_Block_Template extends Mage_Core_Block_Abstract
 
         // EXTR_SKIP protects from overriding
         // already defined variables
-        extract ($this->_viewVars, EXTR_SKIP);
+        extract($this->_viewVars, EXTR_SKIP);
         $do = $this->getDirectOutput();
 
         if (!$do) {
@@ -237,10 +237,11 @@ HTML;
 
         try {
             $includeFilePath = realpath($this->_viewDir . DS . $fileName);
-            if (strpos($includeFilePath, realpath($this->_viewDir)) === 0 || $this->_getAllowSymlinks()) {
+            if ($includeFilePath != '' && (strpos($includeFilePath, realpath($this->_viewDir)) === 0 || $this->_getAllowSymlinks())) {
                 include $includeFilePath;
             } else {
-                Mage::log('Not valid template file:'.$fileName, Zend_Log::CRIT, null, null, true);
+                $thisClass = get_class($this);
+                Mage::log('Not valid template file:' . $fileName . ' class: ' . $thisClass, Zend_Log::CRIT, null, true);
             }
 
         } catch (Exception $e) {

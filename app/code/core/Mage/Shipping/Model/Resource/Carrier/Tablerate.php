@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -253,6 +253,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate extends Mage_Core_Model_Res
             }
             $this->_saveImportData($importData);
             $io->streamClose();
+            $adapter->commit();
         } catch (Mage_Core_Exception $e) {
             $adapter->rollback();
             $io->streamClose();
@@ -263,8 +264,6 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate extends Mage_Core_Model_Res
             Mage::logException($e);
             Mage::throwException(Mage::helper('shipping')->__('An error occurred while import table rates.'));
         }
-
-        $adapter->commit();
 
         if ($this->_importErrors) {
             $error = Mage::helper('shipping')->__('File has not been imported. See the following list of errors: %s', implode(" \n", $this->_importErrors));

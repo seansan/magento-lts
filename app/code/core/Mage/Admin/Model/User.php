@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Admin
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -131,11 +131,16 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
         }
 
         if ($this->getNewPassword()) {
-            // Change password
+            // Change user password
             $data['password'] = $this->_getEncodedPassword($this->getNewPassword());
+            $data['new_password'] = $data['password'];
         } elseif ($this->getPassword() && $this->getPassword() != $this->getOrigData('password')) {
             // New user password
             $data['password'] = $this->_getEncodedPassword($this->getPassword());
+        } elseif (!$this->getPassword() && $this->getOrigData('password') // Change user data
+            || $this->getPassword() == $this->getOrigData('password')     // Retrieve user password
+        ) {
+            $data['password'] = $this->getOrigData('password');
         }
 
         $this->cleanPasswordsValidationData();
@@ -521,7 +526,7 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
      */
     public function validate()
     {
-        $errors = array();
+        $errors = new ArrayObject();
 
         if (!Zend_Validate::is($this->getUsername(), 'NotEmpty')) {
             $errors[] = Mage::helper('adminhtml')->__('User Name is required field.');
@@ -553,16 +558,21 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
             if ($this->hasPasswordConfirmation() && $this->getNewPassword() != $this->getPasswordConfirmation()) {
                 $errors[] = Mage::helper('adminhtml')->__('Password confirmation must be same as password.');
             }
+
+            Mage::dispatchEvent('admin_user_validate', array(
+                'user' => $this,
+                'errors' => $errors,
+            ));
         }
 
         if ($this->userExists()) {
             $errors[] = Mage::helper('adminhtml')->__('A user with the same user name or email aleady exists.');
         }
 
-        if (empty($errors)) {
+        if (count($errors) === 0) {
             return true;
         }
-        return $errors;
+        return (array)$errors;
     }
 
     /**
@@ -630,8 +640,8 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
             return true;
         }
 
-        $dayDifference = floor(($currentTimestamp - $tokenTimestamp) / (24 * 60 * 60));
-        if ($dayDifference >= $tokenExpirationPeriod) {
+        $hoursDifference = floor(($currentTimestamp - $tokenTimestamp) / (60 * 60));
+        if ($hoursDifference >= $tokenExpirationPeriod) {
             return true;
         }
 
@@ -639,12 +649,13 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
     }
 
     /**
-     * Clean password's validation data (password, new_password, password_confirmation)
+     * Clean password's validation data (password, current_password, new_password, password_confirmation)
      *
      * @return Mage_Admin_Model_User
      */
     public function cleanPasswordsValidationData()
     {
+        $this->setData('password', null);
         $this->setData('current_password', null);
         $this->setData('new_password', null);
         $this->setData('password_confirmation', null);
@@ -654,7 +665,7 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
     /**
      * Simple sql format date
      *
-     * @param string $format
+     * @param string | boolean $dayOnly
      * @return string
      */
     protected function _getDateNow($dayOnly = false)

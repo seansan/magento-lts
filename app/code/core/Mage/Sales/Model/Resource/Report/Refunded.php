@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -267,11 +267,11 @@ class Mage_Sales_Model_Resource_Report_Refunded extends Mage_Sales_Model_Resourc
 
             $insertQuery = $helper->getInsertFromSelectUsingAnalytic($select, $table, array_keys($columns));
             $adapter->query($insertQuery);
+            $adapter->commit();
         } catch (Exception $e) {
             $adapter->rollBack();
             throw $e;
         }
-        $adapter->commit();
         return $this;
     }
 }

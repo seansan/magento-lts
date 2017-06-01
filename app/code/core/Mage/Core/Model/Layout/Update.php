@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -31,6 +31,11 @@ class Mage_Core_Model_Layout_Update
      * Additional tag for cleaning layout cache convenience
      */
     const LAYOUT_GENERAL_CACHE_TAG = 'LAYOUT_GENERAL_CACHE_TAG';
+
+    /**
+     * Prefix used for actual XML storage (unprefixed is just the sha1 hash)
+     */
+    const XML_KEY_PREFIX = 'XML_';
 
     /**
      * Layout Update Simplexml Element Class Name
@@ -182,6 +187,13 @@ class Mage_Core_Model_Layout_Update
             return false;
         }
 
+        // The cache key is just a hash of the real content to de-duplicate the often large XML strings
+        if (strlen($result) === 40) { // sha1
+            if (!$result = Mage::app()->loadCache(self::XML_KEY_PREFIX . $result)) {
+                return false;
+            }
+        }
+
         $this->addUpdate($result);
 
         return true;
@@ -194,8 +206,17 @@ class Mage_Core_Model_Layout_Update
         }
         $str = $this->asString();
         $tags = $this->getHandles();
+
+        // Cache key is sha1 hash of actual XML string
+        $hash = sha1($str);
         $tags[] = self::LAYOUT_GENERAL_CACHE_TAG;
-        return Mage::app()->saveCache($str, $this->getCacheId(), $tags, null);
+        Mage::app()->saveCache($hash, $this->getCacheId(), $tags, null);
+
+        // Only save actual XML to cache if it doesn't already exist
+        if ( ! Mage::app()->getCache()->test(self::XML_KEY_PREFIX . $hash)) {
+            Mage::app()->saveCache($str, self::XML_KEY_PREFIX . $hash, $tags, null);
+        }
+        return TRUE;
     }
 
     /**
@@ -362,6 +383,7 @@ class Mage_Core_Model_Layout_Update
         Varien_Profiler::start($_profilerKey);
         $updateStr = $this->_getUpdateString($handle);
         if (!$updateStr) {
+            Varien_Profiler::stop($_profilerKey);
             return false;
         }
         $updateStr = '<update_xml>' . $updateStr . '</update_xml>';

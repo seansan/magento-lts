@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -137,6 +137,19 @@ class Mage_Sales_Model_Resource_Order_Item_Collection extends Mage_Sales_Model_R
         } else {
             $this->addFieldToFilter('parent_item_id', $parentId);
         }
+        return $this;
+    }
+
+    /**
+     * Filter only available items.
+     *
+     * @return Mage_Sales_Model_Resource_Order_Item_Collection
+     */
+    public function addAvailableFilter()
+    {
+        $fieldExpression = '(qty_shipped - qty_returned)';
+        $resultCondition = $this->_getConditionSql($fieldExpression, array("gt" => 0));
+        $this->getSelect()->where($resultCondition);
         return $this;
     }
 }

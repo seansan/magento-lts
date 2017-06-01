@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Bundle
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -253,9 +253,14 @@ class Mage_Bundle_Model_Resource_Price_Index extends Mage_Core_Model_Resource_Db
     {
         $adapter = $this->_getWriteAdapter();
         $adapter->beginTransaction();
-        $bind = array($productId, $websiteId, $groupId, $minPrice, $maxPrice);
-        $adapter->insertOnDuplicate($this->getMainTable(), $bind, array('min_price', 'max_price'));
-        $adapter->commit();
+        try {
+            $bind = array($productId, $websiteId, $groupId, $minPrice, $maxPrice);
+            $adapter->insertOnDuplicate($this->getMainTable(), $bind, array('min_price', 'max_price'));
+            $adapter->commit();
+        } catch (Exception $e) {
+            $adapter->rollBack();
+            throw $e;
+        }
 
         return $this;
     }

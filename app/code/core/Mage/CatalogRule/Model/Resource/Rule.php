@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogRule
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -338,26 +338,27 @@ class Mage_CatalogRule_Model_Resource_Rule extends Mage_Rule_Model_Resource_Abst
         $ruleId = $rule->getId();
         $write  = $this->_getWriteAdapter();
         $write->beginTransaction();
-        if ($rule->getProductsFilter()) {
-            $this->cleanProductData($ruleId, $rule->getProductsFilter());
-        } else {
-            $this->cleanProductData($ruleId);
-        }
-
-        if (!$rule->getIsActive()) {
-            $write->commit();
-            return $this;
-        }
-
-        $websiteIds = $rule->getWebsiteIds();
-        if (!is_array($websiteIds)) {
-            $websiteIds = explode(',', $websiteIds);
-        }
-        if (empty($websiteIds)) {
-            return $this;
-        }
-
         try {
+            if ($rule->getProductsFilter()) {
+                $this->cleanProductData($ruleId, $rule->getProductsFilter());
+            } else {
+                $this->cleanProductData($ruleId);
+            }
+
+            if (!$rule->getIsActive()) {
+                $write->commit();
+                return $this;
+            }
+
+            $websiteIds = $rule->getWebsiteIds();
+            if (!is_array($websiteIds)) {
+                $websiteIds = explode(',', $websiteIds);
+            }
+            if (empty($websiteIds)) {
+                $write->commit();
+                return $this;
+            }
+
             $this->insertRuleData($rule, $websiteIds);
             $write->commit();
         } catch (Exception $e) {
@@ -657,13 +658,12 @@ class Mage_CatalogRule_Model_Resource_Rule extends Mage_Rule_Model_Resource_Abst
             }
             $adapter->insertOnDuplicate($this->getTable('catalogrule/affected_product'), array_unique($productIds));
             $adapter->insertOnDuplicate($this->getTable('catalogrule/rule_product_price'), $arrData);
-
+            $adapter->commit();
         } catch (Exception $e) {
             $adapter->rollback();
             throw $e;
 
         }
-        $adapter->commit();
 
         return $this;
     }
@@ -733,7 +733,8 @@ class Mage_CatalogRule_Model_Resource_Rule extends Mage_Rule_Model_Resource_Abst
             ->where('customer_group_id = ?', $customerGroupId)
             ->where('product_id = ?', $productId)
             ->where('from_time = 0 or from_time < ?', $date)
-            ->where('to_time = 0 or to_time > ?', $date);
+            ->where('to_time = 0 or to_time > ?', $date)
+            ->order('sort_order');
 
         return $adapter->fetchAll($select);
     }
@@ -780,26 +781,25 @@ class Mage_CatalogRule_Model_Resource_Rule extends Mage_Rule_Model_Resource_Abst
 
         $write = $this->_getWriteAdapter();
         $write->beginTransaction();
-
-        if ($this->_isProductMatchedRule($ruleId, $product)) {
-            $this->cleanProductData($ruleId, array($productId));
-        }
-        if ($this->validateProduct($rule, $product, $websiteIds)) {
-            try {
+        try {
+            if ($this->_isProductMatchedRule($ruleId, $product)) {
+                $this->cleanProductData($ruleId, array($productId));
+            }
+            if ($this->validateProduct($rule, $product, $websiteIds)) {
                 $this->insertRuleData($rule, $websiteIds, array(
                     $productId => array_combine(array_values($websiteIds), array_values($websiteIds)))
                 );
-            } catch (Exception $e) {
-                $write->rollback();
-                throw $e;
+            } else {
+                $write->delete($this->getTable('catalogrule/rule_product_price'), array(
+                    $write->quoteInto('product_id = ?', $productId),
+                ));
             }
-        } else {
-            $write->delete($this->getTable('catalogrule/rule_product_price'), array(
-                $write->quoteInto('product_id = ?', $productId),
-            ));
-        }
 
-        $write->commit();
+            $write->commit();
+        } catch (Exception $e) {
+            $write->rollback();
+            throw $e;
+        }
         return $this;
     }
 

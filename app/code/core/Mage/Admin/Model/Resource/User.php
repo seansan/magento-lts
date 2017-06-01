@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Admin
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -177,7 +177,7 @@ class Mage_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
      */
     protected function _afterSave(Mage_Core_Model_Abstract $user)
     {
-        $user->setExtra(unserialize($user->getExtra()));
+        $this->_unserializeExtraData($user);
         return $this;
     }
 
@@ -189,10 +189,7 @@ class Mage_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
      */
     protected function _afterLoad(Mage_Core_Model_Abstract $user)
     {
-        if (is_string($user->getExtra())) {
-            $user->setExtra(unserialize($user->getExtra()));
-        }
-        return parent::_afterLoad($user);
+        return parent::_afterLoad($this->_unserializeExtraData($user));
     }
 
     /**
@@ -215,14 +212,14 @@ class Mage_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
 
             $adapter->delete($this->getMainTable(), $conditions);
             $adapter->delete($this->getTable('admin/role'), $conditions);
+            $adapter->commit();
         } catch (Mage_Core_Exception $e) {
+            $adapter->rollBack();
             throw $e;
-            return false;
         } catch (Exception $e) {
             $adapter->rollBack();
             return false;
         }
-        $adapter->commit();
         $this->_afterDelete($user);
         return true;
     }
@@ -273,6 +270,7 @@ class Mage_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
             }
             $adapter->commit();
         } catch (Mage_Core_Exception $e) {
+            $adapter->rollBack();
             throw $e;
         } catch (Exception $e) {
             $adapter->rollBack();
@@ -458,5 +456,22 @@ class Mage_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
         }
 
         return $this;
+    }
+
+    /**
+     * Unserializes user extra data
+     *
+     * @param Mage_Core_Model_Abstract $user
+     * @return Mage_Core_Model_Abstract
+     */
+    protected function _unserializeExtraData(Mage_Core_Model_Abstract $user)
+    {
+        try {
+            $unsterilizedData = Mage::helper('core/unserializeArray')->unserialize($user->getExtra());
+            $user->setExtra($unsterilizedData);
+        } catch (Exception $e) {
+            $user->setExtra(false);
+        }
+        return $user;
     }
 }

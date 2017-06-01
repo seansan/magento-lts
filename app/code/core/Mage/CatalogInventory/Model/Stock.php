@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogInventory
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -135,21 +135,25 @@ class Mage_CatalogInventory_Model_Stock extends Mage_Core_Model_Abstract
         $qtys = $this->_prepareProductQtys($items);
         $item = Mage::getModel('cataloginventory/stock_item');
         $this->_getResource()->beginTransaction();
-        $stockInfo = $this->_getResource()->getProductsStock($this, array_keys($qtys), true);
-        $fullSaveItems = array();
-        foreach ($stockInfo as $itemInfo) {
-            $item->setData($itemInfo);
-            if (!$item->checkQty($qtys[$item->getProductId()])) {
-                $this->_getResource()->commit();
-                Mage::throwException(Mage::helper('cataloginventory')->__('Not all products are available in the requested quantity'));
+        try {
+            $stockInfo = $this->_getResource()->getProductsStock($this, array_keys($qtys), true);
+            $fullSaveItems = array();
+            foreach ($stockInfo as $itemInfo) {
+                $item->setData($itemInfo);
+                if (!$item->checkQty($qtys[$item->getProductId()])) {
+                    Mage::throwException(Mage::helper('cataloginventory')->__('Not all products are available in the requested quantity'));
+                }
+                $item->subtractQty($qtys[$item->getProductId()]);
+                if (!$item->verifyStock() || $item->verifyNotification()) {
+                    $fullSaveItems[] = clone $item;
+                }
             }
-            $item->subtractQty($qtys[$item->getProductId()]);
-            if (!$item->verifyStock() || $item->verifyNotification()) {
-                $fullSaveItems[] = clone $item;
-            }
+            $this->_getResource()->correctItemsQty($this, $qtys, '-');
+            $this->_getResource()->commit();
+        } catch (Exception $e) {
+            $this->_getResource()->rollBack();
+            throw $e;
         }
-        $this->_getResource()->correctItemsQty($this, $qtys, '-');
-        $this->_getResource()->commit();
         return $fullSaveItems;
     }
 

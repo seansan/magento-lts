@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -68,6 +68,16 @@ class Mage_Eav_Model_Entity_Attribute_Source_Boolean extends Mage_Eav_Model_Enti
             $_options[$option['value']] = $option['label'];
         }
         return $_options;
+    }
+
+    /**
+     * Retrieve option array
+     *
+     * @return array
+     */
+    public function toOptionArray()
+    {
+        return $this->getOptionArray();
     }
 
     /**

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -481,12 +481,12 @@ abstract class Mage_Core_Model_Abstract extends Varien_Object
             $this->_afterDelete();
 
             $this->_getResource()->commit();
-            $this->_afterDeleteCommit();
         }
         catch (Exception $e){
             $this->_getResource()->rollBack();
             throw $e;
         }
+        $this->_afterDeleteCommit();
         return $this;
     }
 

@@ -19,7 +19,32 @@
  *
  * @category    design
  * @package     default_default
- * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 
+/* BACKEND */
+#page-help-link {display: none}
+#html-body .nav-bar #nav a {padding: 0 6px !important; cursor: pointer;}
+#html-body #nav ul span, #html-body #nav ul li.last li span {padding-left: 0px !important; cursor: pointer;}
+/* .header { background: initial; background-color: red; } */
+
+/* Voor Cliff zodat verzonden orders of deelleveringen beter opvallen  */
+.adminhtml-sales-order-index .order-tables .qty-table tr:nth-child(3) {background: orange !important; }
+
+/* .adminhtml-sales-order-index .order-tables .qty-table tr:nth-child(1) { display:none; } */
+.adminhtml-sales-order-index .order-tables .qty-table tr:nth-child(2) { display:none; }
+
+.adminhtml-sales-order-index .order-tables tr.border td:nth-child(1) { white-space: nowrap; }
+
+.grid tr.filter .range input { width: 100px; min-width: initial; }
+
+.grid tr.filter .range .range-line { width: auto; }
+
+.grid tr.filter .range .label { display: none; }
+
+.grid tr.filter .range div.date { width: 80px; min-width: initial; }
+
+.grid td input.input-text { width: 102%; box-sizing: border-box; }
+
+.grid td.a-right.a-center { text-align: center !important; }

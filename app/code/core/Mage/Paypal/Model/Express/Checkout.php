@@ -435,10 +435,11 @@ class Mage_Paypal_Model_Express_Checkout
 
                     if ($quote->getPayment()->getAdditionalInformation(self::PAYMENT_INFO_BUTTON) == 1) {
                         // PayPal doesn't provide detailed shipping info: prefix, middlename, lastname, suffix
-                        $shippingAddress->setPrefix(null);
-                        $shippingAddress->setMiddlename(null);
-                        $shippingAddress->setLastname(null);
-                        $shippingAddress->setSuffix(null);
+                        // SNH 21-11-2017 CUSTOM: Paypal does seem to provide this data below
+                        //$shippingAddress->setPrefix(null);
+                        //$shippingAddress->setMiddlename(null);
+                        //$shippingAddress->setLastname(null);
+                        //$shippingAddress->setSuffix(null);
                     }
 
                     $shippingAddress->setCollectShippingRates(true);

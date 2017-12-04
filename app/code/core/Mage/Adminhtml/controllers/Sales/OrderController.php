@@ -283,6 +283,11 @@ class Mage_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Controller_Act
 
                 $comment = trim(strip_tags($data['comment']));
 
+                // SNH CUSTOM SHOW NAME IN BACKEND ON STATUS UPDATE 18-8-2017
+                $session = Mage::getSingleton('admin/session');
+                $username = $session->getUser()->getUsername();
+                $data['comment'] .= (!empty($username)) ? " ({$username})" : ' (system)';                
+                
                 $order->save();
                 $order->sendOrderUpdateEmail($notify, $comment);
 

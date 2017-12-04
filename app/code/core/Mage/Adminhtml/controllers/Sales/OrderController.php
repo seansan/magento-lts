@@ -277,16 +277,17 @@ class Mage_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Controller_Act
                 $notify = isset($data['is_customer_notified']) ? $data['is_customer_notified'] : false;
                 $visible = isset($data['is_visible_on_front']) ? $data['is_visible_on_front'] : false;
 
+                // SNH CUSTOM SHOW NAME IN BACKEND ON STATUS UPDATE 18-8-2017
+                $session = Mage::getSingleton('admin/session');
+                $username = $session->getUser()->getUsername();
+                $data['comment'] .= (!empty($username)) ? " ({$username})" : ' (system)';
+
                 $order->addStatusHistoryComment($data['comment'], $data['status'])
                     ->setIsVisibleOnFront($visible)
                     ->setIsCustomerNotified($notify);
 
                 $comment = trim(strip_tags($data['comment']));
 
-                // SNH CUSTOM SHOW NAME IN BACKEND ON STATUS UPDATE 18-8-2017
-                $session = Mage::getSingleton('admin/session');
-                $username = $session->getUser()->getUsername();
-                $data['comment'] .= (!empty($username)) ? " ({$username})" : ' (system)';                
                 
                 $order->save();
                 $order->sendOrderUpdateEmail($notify, $comment);

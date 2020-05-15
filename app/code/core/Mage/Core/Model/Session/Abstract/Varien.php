@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -50,7 +50,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      * Configure and start session
      *
      * @param string $sessionName
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function start($sessionName=null)
     {
@@ -140,7 +140,8 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
             // secure cookie check to prevent MITM attack
             $secureCookieName = $sessionName . '_cid';
             if (isset($_SESSION[self::SECURE_COOKIE_CHECK_KEY])) {
-                if ($_SESSION[self::SECURE_COOKIE_CHECK_KEY] !== md5($cookie->get($secureCookieName))) {
+                $cookieValue = $cookie->get($secureCookieName);
+                if (!is_string($cookieValue) || $_SESSION[self::SECURE_COOKIE_CHECK_KEY] !== md5($cookieValue)) {
                     session_regenerate_id(false);
                     $sessionHosts = $this->getSessionHosts();
                     $currentCookieDomain = $cookie->getDomain();
@@ -190,7 +191,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      * Set session hosts
      *
      * @param array $hosts
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function setSessionHosts(array $hosts)
     {
@@ -211,7 +212,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Revalidate cookie
      * @deprecated after 1.4 cookie renew moved to session start method
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function revalidateCookie()
     {
@@ -223,7 +224,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      *
      * @param string $namespace
      * @param string $sessionName
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function init($namespace, $sessionName=null)
     {
@@ -272,7 +273,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      * Set custom session id
      *
      * @param string $id
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function setSessionId($id=null)
     {
@@ -296,7 +297,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      * Set session name
      *
      * @param string $name
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function setSessionName($name)
     {
@@ -307,7 +308,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Unset all data
      *
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function unsetAll()
     {
@@ -318,7 +319,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Alias for unsetAll
      *
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function clear()
     {
@@ -420,7 +421,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      * Validate session
      *
      * @throws Mage_Core_Model_Session_Exception
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function validate()
     {
@@ -544,7 +545,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Regenerate session Id
      *
-     * @return Mage_Core_Model_Session_Abstract_Varien
+     * @return $this
      */
     public function regenerateSessionId()
     {

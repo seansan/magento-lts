@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Tax
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -69,7 +69,7 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
     /**
      * Initialize all order totals relates with tax
      *
-     * @return Mage_Tax_Block_Sales_Order_Tax
+     * @return $this
      */
     public function initTotals()
     {
@@ -96,7 +96,7 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
      * Add tax total string
      *
      * @param string $after
-     * @return Mage_Tax_Block_Sales_Order_Tax
+     * @return $this
      */
     protected function _addTax($after='discount')
     {

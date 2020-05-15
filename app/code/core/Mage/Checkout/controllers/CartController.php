@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Checkout
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -69,7 +69,7 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
     /**
      * Set back redirect url to response
      *
-     * @return Mage_Checkout_CartController
+     * @return $this
      * @throws Mage_Exception
      */
     protected function _goBack()
@@ -122,7 +122,7 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
     /**
      * Predispatch: remove isMultiShipping option from quote
      *
-     * @return Mage_Checkout_CartController
+     * @return $this
      */
     public function preDispatch()
     {
@@ -620,6 +620,7 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
                     );
                 }
             } else {
+                $this->_getSession()->setCartCouponCode('');
                 $this->_getSession()->addSuccess($this->__('Coupon code was canceled.'));
             }
 

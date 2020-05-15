@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Payment
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -78,7 +78,7 @@ class Mage_Payment_Block_Catalog_Product_View_Profile extends Mage_Core_Block_Te
     /**
      * Determine current product and initialize its recurring profile model
      *
-     * @return Mage_Payment_Block_Catalog_Product_View_Profile
+     * @return $this
      */
     protected function _prepareLayout()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogSearch
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -54,7 +54,7 @@ class Mage_CatalogSearch_Block_Result extends Mage_Core_Block_Template
     /**
      * Prepare layout
      *
-     * @return Mage_CatalogSearch_Block_Result
+     * @return $this
      */
     protected function _prepareLayout()
     {
@@ -103,7 +103,7 @@ class Mage_CatalogSearch_Block_Result extends Mage_Core_Block_Template
     /**
      * Set search available list orders
      *
-     * @return Mage_CatalogSearch_Block_Result
+     * @return $this
      */
     public function setListOrders()
     {
@@ -127,7 +127,7 @@ class Mage_CatalogSearch_Block_Result extends Mage_Core_Block_Template
     /**
      * Set available view mode
      *
-     * @return Mage_CatalogSearch_Block_Result
+     * @return $this
      */
     public function setListModes()
     {
@@ -142,7 +142,7 @@ class Mage_CatalogSearch_Block_Result extends Mage_Core_Block_Template
     /**
      * Set Search Result collection
      *
-     * @return Mage_CatalogSearch_Block_Result
+     * @return $this
      */
     public function setListCollection()
     {

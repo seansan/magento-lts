@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -64,7 +64,7 @@ class Mage_Core_Model_File_Storage_Directory_Database extends Mage_Core_Model_Fi
      * Load object data by path
      *
      * @param  string $path
-     * @return Mage_Core_Model_File_Storage_Directory_Database
+     * @return $this
      */
     public function loadByPath($path)
     {
@@ -119,7 +119,7 @@ class Mage_Core_Model_File_Storage_Directory_Database extends Mage_Core_Model_Fi
      * Create directories recursively
      *
      * @param  string $path
-     * @return Mage_Core_Model_File_Storage_Directory_Database
+     * @return $this
      */
     public function createRecursive($path)
     {
@@ -171,7 +171,7 @@ class Mage_Core_Model_File_Storage_Directory_Database extends Mage_Core_Model_Fi
      * Import directories to storage
      *
      * @param  array $dirs
-     * @return Mage_Core_Model_File_Storage_Directory_Database
+     * @return $this
      */
     public function importDirectories($dirs)
     {
@@ -211,7 +211,7 @@ class Mage_Core_Model_File_Storage_Directory_Database extends Mage_Core_Model_Fi
     /**
      * Clean directories at storage
      *
-     * @return Mage_Core_Model_File_Storage_Directory_Database
+     * @return $this
      */
     public function clearDirectories()
     {
@@ -236,7 +236,7 @@ class Mage_Core_Model_File_Storage_Directory_Database extends Mage_Core_Model_Fi
      * Delete directory from database
      *
      * @param string $path
-     * @return Mage_Core_Model_File_Storage_Directory_Database
+     * @return $this
      */
     public function deleteDirectory($dirPath)
     {

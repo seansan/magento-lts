@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -46,7 +46,7 @@ class Mage_XmlConnect_Model_Resource_Queue_Collection extends Mage_Core_Model_Re
     /**
      * Initialize collection select
      *
-     * @return Mage_XmlConnect_Model_Resource_Queue_Collection
+     * @return $this
      */
     protected function _initSelect()
     {
@@ -58,7 +58,7 @@ class Mage_XmlConnect_Model_Resource_Queue_Collection extends Mage_Core_Model_Re
     /**
      * Join Template Name and Application Name to collection
      *
-     * @return Mage_XmlConnect_Model_Resource_Queue_Collection
+     * @return $this
      */
     protected function _joinNames()
     {
@@ -70,7 +70,7 @@ class Mage_XmlConnect_Model_Resource_Queue_Collection extends Mage_Core_Model_Re
    /**
     * Join Template Name to collection
     *
-    * @return Mage_XmlConnect_Model_Resource_Queue_Collection
+    * @return $this
     */
     protected function _joinTemplateName()
     {
@@ -85,7 +85,7 @@ class Mage_XmlConnect_Model_Resource_Queue_Collection extends Mage_Core_Model_Re
     /**
      * Join Application Name to collection
      *
-     * @return Mage_XmlConnect_Model_Resource_Queue_Collection
+     * @return $this
      */
     protected function _joinApplicationName()
     {
@@ -100,7 +100,7 @@ class Mage_XmlConnect_Model_Resource_Queue_Collection extends Mage_Core_Model_Re
     /**
      * Add filter by only ready fot sending item
      *
-     * @return Mage_XmlConnect_Model_Resource_Queue_Collection
+     * @return $this
      */
     public function addOnlyForSendingFilter()
     {

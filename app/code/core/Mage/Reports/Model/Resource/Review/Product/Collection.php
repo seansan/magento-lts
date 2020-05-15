@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Reports
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -42,7 +42,7 @@ class Mage_Reports_Model_Resource_Review_Product_Collection extends Mage_Catalog
     /**
      * Join review table to result
      *
-     * @return Mage_Reports_Model_Resource_Review_Product_Collection
+     * @return $this
      */
     public function joinReview()
     {
@@ -95,7 +95,7 @@ class Mage_Reports_Model_Resource_Review_Product_Collection extends Mage_Catalog
      *
      * @param string $attribute
      * @param string $dir
-     * @return Mage_Reports_Model_Resource_Review_Product_Collection
+     * @return $this
      */
     public function addAttributeToSort($attribute, $dir = self::SORT_ORDER_ASC)
     {

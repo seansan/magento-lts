@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Widget
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -98,7 +98,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
     /**
      * Prepare form before rendering HTML
      *
-     * @return Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
+     * @return $this
      */
     protected function _prepareForm()
     {
@@ -207,7 +207,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
     /**
      * Initialize form fileds values
      *
-     * @return Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
+     * @return $this
      */
     protected function _initFormValues()
     {

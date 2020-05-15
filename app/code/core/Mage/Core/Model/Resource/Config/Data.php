@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,7 +47,7 @@ class Mage_Core_Model_Resource_Config_Data extends Mage_Core_Model_Resource_Db_A
      * Convert array to comma separated value
      *
      * @param Mage_Core_Model_Abstract $object
-     * @return Mage_Core_Model_Resource_Config_Data
+     * @return $this
      */
     protected function _beforeSave(Mage_Core_Model_Abstract $object)
     {
@@ -66,7 +66,7 @@ class Mage_Core_Model_Resource_Config_Data extends Mage_Core_Model_Resource_Db_A
      * Set id to object if exists configuration instead of throw exception
      *
      * @param Mage_Core_Model_Config_Data $object
-     * @return Mage_Core_Model_Resource_Config_Data
+     * @return $this
      */
     protected function _checkUnique(Mage_Core_Model_Abstract $object)
     {

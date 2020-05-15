@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Page
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -126,12 +126,13 @@ class Mage_Page_Block_Html extends Mage_Core_Block_Template
      * Add CSS class to page body tag
      *
      * @param string $className
-     * @return Mage_Page_Block_Html
+     * @return $this
      */
     public function addBodyClass($className)
     {
         $className = preg_replace('#[^a-z0-9]+#', '-', strtolower($className));
-        $this->setBodyClass($this->getBodyClass() . ' ' . $className);
+        $class = $this->getBodyClass() ? $this->getBodyClass() . ' ' . $className : $className;
+        $this->setBodyClass($class);
         return $this;
     }
 

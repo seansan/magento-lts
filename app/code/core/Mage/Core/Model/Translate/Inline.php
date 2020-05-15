@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -165,7 +165,7 @@ class Mage_Core_Model_Translate_Inline
      * Parse and save edited translate
      *
      * @param array $translate
-     * @return Mage_Core_Model_Translate_Inline
+     * @return $this
      */
     public function processAjaxPost($translate)
     {
@@ -195,7 +195,7 @@ class Mage_Core_Model_Translate_Inline
      * Strip inline translations from text
      *
      * @param array|string $body
-     * @return Mage_Core_Model_Translate_Inline
+     * @return $this
      */
     public function stripInlineTranslations(&$body)
     {
@@ -213,7 +213,7 @@ class Mage_Core_Model_Translate_Inline
      * Replace translate templates to HTML fragments
      *
      * @param array|string $body
-     * @return Mage_Core_Model_Translate_Inline
+     * @return $this
      */
     public function processResponseBody(&$body)
     {
@@ -586,7 +586,7 @@ class Mage_Core_Model_Translate_Inline
      *
      * @param bool $flag
      * @deprecated 1.3.2.2
-     * @return Mage_Core_Model_Translate_Inline
+     * @return $this
      */
     public function setIsAjaxRequest($flag)
     {
@@ -608,7 +608,7 @@ class Mage_Core_Model_Translate_Inline
      * Set flag about parsed content is Json
      *
      * @param bool $flag
-     * @return Mage_Core_Model_Translate_Inline
+     * @return $this
      */
     public function setIsJson($flag)
     {

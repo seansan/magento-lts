@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -230,7 +230,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * Set configuration options
      *
      * @param array $options
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function setOptions($options)
     {
@@ -243,7 +243,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     /**
      * Initialization of core configuration
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function init($options=array())
     {
@@ -268,7 +268,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     /**
      * Load base system configuration (config.xml and local.xml files)
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function loadBase()
     {
@@ -310,7 +310,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     /**
      * Load modules configuration
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function loadModules()
     {
@@ -347,7 +347,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     /**
      * Load config data from DB
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function loadDb()
     {
@@ -579,7 +579,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     /**
      * Remove configuration cache
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function removeCache()
     {
@@ -590,7 +590,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     /**
      * Configuration cache clean process
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function cleanCache()
     {
@@ -750,7 +750,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * Add module(s) to allowed list
      *
      * @param  strung|array $module
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function addAllowedModules($module)
     {
@@ -1052,7 +1052,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * @param string $moduleName
      * @return Varien_Simplexml_Object
      */
-    function getModuleConfig($moduleName='')
+    public function getModuleConfig($moduleName='')
     {
         $modules = $this->getNode('modules');
         if (''===$moduleName) {
@@ -1070,7 +1070,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * @param string|Varien_Simplexml_Object $module
      * @return object
      */
-    function getModuleSetup($module='')
+    public function getModuleSetup($module='')
     {
         $className = 'Mage_Core_Setup';
         if (''!==$module) {
@@ -1554,7 +1554,7 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * @param string $value
      * @param string $scope
      * @param int $scopeId
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function saveConfig($path, $value, $scope = 'default', $scopeId = 0)
     {

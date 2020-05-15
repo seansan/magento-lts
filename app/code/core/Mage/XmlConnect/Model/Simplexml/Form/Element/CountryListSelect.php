@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -54,7 +54,7 @@ class Mage_XmlConnect_Model_Simplexml_Form_Element_CountryListSelect
     /**
      * Set country list values 'country_id' and 'region_id'
      *
-     * @return Mage_XmlConnect_Model_Simplexml_Form_Element_CountryListSelect
+     * @return $this
      */
     protected function _setValues()
     {
@@ -75,7 +75,7 @@ class Mage_XmlConnect_Model_Simplexml_Form_Element_CountryListSelect
      *
      * @deprecated old output standard
      * @param Mage_XmlConnect_Model_Simplexml_Element $xmlObj
-     * @return Mage_XmlConnect_Model_Simplexml_Form_Element_CountryListSelect
+     * @return $this
      */
     protected function _addOldStandardValue(Mage_XmlConnect_Model_Simplexml_Element $xmlObj)
     {

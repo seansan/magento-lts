@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -31,7 +31,7 @@ class Mage_Sales_Model_Order_Invoice_Total_Tax extends Mage_Sales_Model_Order_In
      * Collect invoice tax amount
      *
      * @param Mage_Sales_Model_Order_Invoice $invoice
-     * @return Mage_Sales_Model_Order_Invoice_Total_Tax
+     * @return $this
      */
     public function collect(Mage_Sales_Model_Order_Invoice $invoice)
     {

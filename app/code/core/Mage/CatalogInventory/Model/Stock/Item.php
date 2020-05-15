@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogInventory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -198,7 +198,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
     /**
      * Subtract quote item quantity
      *
-     * @param   decimal $qty
+     * @param   float $qty
      * @return  Mage_CatalogInventory_Model_Stock_Item
      */
     public function subtractQty($qty)
@@ -223,7 +223,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
      * Add quantity process
      *
      * @param float $qty
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function addQty($qty)
     {
@@ -301,7 +301,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
      * Setter for customer group id
      *
      * @param int Value of customer group id
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function setCustomerGroupId($value)
     {
@@ -444,7 +444,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
     /**
      * Check quantity
      *
-     * @param   decimal $qty
+     * @param   float $qty
      * @exception Mage_Core_Exception
      * @return  bool
      */
@@ -700,7 +700,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
      * Add join for catalog in stock field to product collection
      *
      * @param Mage_Catalog_Model_Entity_Product_Collection $productCollection
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function addCatalogInventoryToProductCollection($productCollection)
     {
@@ -715,7 +715,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
      * @param string $itemError
      * @param string $quoteError
      * @param string $errorIndex
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     protected function _addQuoteItemError(Mage_Sales_Model_Quote_Item $item, $itemError,
         $quoteError, $errorIndex='error'
@@ -730,7 +730,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
     /**
      * Before save prepare process
      *
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -819,7 +819,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
      * Add product data to stock item
      *
      * @param Mage_Catalog_Model_Product $product
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function setProduct($product)
     {
@@ -886,7 +886,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
 
     /**
      * Reset model data
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function reset()
     {
@@ -900,7 +900,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
      * Set whether index events should be processed immediately
      *
      * @param bool $process
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function setProcessIndexEvents($process = true)
     {
@@ -911,7 +911,7 @@ class Mage_CatalogInventory_Model_Stock_Item extends Mage_Core_Model_Abstract
     /**
      * Callback function which called after transaction commit in resource model
      *
-     * @return Mage_CatalogInventory_Model_Stock_Item
+     * @return $this
      */
     public function afterCommitCallback()
     {

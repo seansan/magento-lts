@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Tax
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -195,7 +195,7 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
      * @param Mage_Sales_Model_Quote_Item_Abstract $item
      * @param Varien_Object $taxRequest
      *
-     * @return Mage_Tax_Model_Sales_Total_Quote_Subtotal
+     * @return $this
      */
     protected function _processItem($item, $taxRequest)
     {
@@ -221,7 +221,7 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
      * @param Mage_Sales_Model_Quote_Item_Abstract $item
      * @param Varien_Object $request
      *
-     * @return Mage_Tax_Model_Sales_Total_Quote_Subtotal
+     * @return $this
      */
     protected function _unitBaseCalculation($item, $request)
     {
@@ -358,7 +358,7 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
      * @param Mage_Sales_Model_Quote_Item_Abstract $item
      * @param Varien_Object $request
      *
-     * @return Mage_Tax_Model_Sales_Total_Quote_Subtotal
+     * @return $this
      */
     protected function _rowBaseCalculation($item, $request)
     {
@@ -503,7 +503,7 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
      * @param Mage_Sales_Model_Quote_Item_Abstract $item
      * @param Varien_Object $request
      *
-     * @return Mage_Tax_Model_Sales_Total_Quote_Subtotal
+     * @return $this
      */
     protected function _totalBaseCalculation($item, $request)
     {

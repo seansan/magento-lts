@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_ImportExport
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -289,7 +289,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer_Address extends Mage_Import
     /**
      * Initialize customer address attributes.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer_Address
+     * @return $this
      */
     protected function _initAttributes()
     {
@@ -316,7 +316,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer_Address extends Mage_Import
     /**
      * Initialize country regions hash for clever recognition.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer_Address
+     * @return $this
      */
     protected function _initCountryRegions()
     {
@@ -351,7 +351,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer_Address extends Mage_Import
      * Save customer address attributes.
      *
      * @param array $attributesData
-     * @return Mage_ImportExport_Model_Import_Entity_Customer_Address
+     * @return $this
      */
     protected function _saveAddressAttributes(array $attributesData)
     {
@@ -377,7 +377,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer_Address extends Mage_Import
      * Update and insert data in entity table.
      *
      * @param array $entityRows Rows for insert
-     * @return Mage_ImportExport_Model_Import_Entity_Customer_Address
+     * @return $this
      */
     protected function _saveAddressEntity(array $entityRows)
     {
@@ -402,7 +402,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer_Address extends Mage_Import
      * Save customer default addresses.
      *
      * @param array $defaults
-     * @return Mage_ImportExport_Model_Import_Entity_Customer_Address
+     * @return $this
      */
     protected function _saveCustomerDefaults(array $defaults)
     {

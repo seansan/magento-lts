@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -44,7 +44,7 @@ class Mage_Core_Controller_Response_Http extends Zend_Controller_Response_Http
      *
      * @link  http://bugs.php.net/bug.php?id=36705
      *
-     * @return Mage_Core_Controller_Response_Http
+     * @return $this
      */
     public function sendHeaders()
     {
@@ -89,7 +89,7 @@ class Mage_Core_Controller_Response_Http extends Zend_Controller_Response_Http
      *
      * @param string $url
      * @param int $code
-     * @return Mage_Core_Controller_Response_Http
+     * @return $this
      */
     public function setRedirect($url, $code = 302)
     {

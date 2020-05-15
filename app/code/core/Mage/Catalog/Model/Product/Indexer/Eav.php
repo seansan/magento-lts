@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -168,7 +168,7 @@ class Mage_Catalog_Model_Product_Indexer_Eav extends Mage_Index_Model_Indexer_Ab
      * Register data required by process in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_Catalog_Model_Product_Indexer_Eav
+     * @return $this
      */
     protected function _registerCatalogProductSaveEvent(Mage_Index_Model_Event $event)
     {
@@ -197,7 +197,7 @@ class Mage_Catalog_Model_Product_Indexer_Eav extends Mage_Index_Model_Indexer_Ab
      * Register data required by process in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_Catalog_Model_Product_Indexer_Eav
+     * @return $this
      */
     protected function _registerCatalogProductDeleteEvent(Mage_Index_Model_Event $event)
     {
@@ -216,7 +216,7 @@ class Mage_Catalog_Model_Product_Indexer_Eav extends Mage_Index_Model_Indexer_Ab
      * Register data required by process in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_Catalog_Model_Product_Indexer_Eav
+     * @return $this
      */
     protected function _registerCatalogProductMassActionEvent(Mage_Index_Model_Event $event)
     {
@@ -257,7 +257,7 @@ class Mage_Catalog_Model_Product_Indexer_Eav extends Mage_Index_Model_Indexer_Ab
      * Register data required by process attribute save in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_Catalog_Model_Product_Indexer_Eav
+     * @return $this
      */
     protected function _registerCatalogAttributeSaveEvent(Mage_Index_Model_Event $event)
     {

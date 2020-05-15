@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -85,7 +85,7 @@ class Mage_Shipping_Model_Shipping
     /**
      * Reset cached result
      *
-     * @return Mage_Shipping_Model_Shipping
+     * @return $this
      */
     public function resetResult()
     {
@@ -108,7 +108,7 @@ class Mage_Shipping_Model_Shipping
      *
      * @todo make it ordered
      * @param Mage_Shipping_Model_Shipping_Method_Request $data
-     * @return Mage_Shipping_Model_Shipping
+     * @return $this
      */
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
@@ -149,7 +149,7 @@ class Mage_Shipping_Model_Shipping
      *
      * @param string                           $carrierCode
      * @param Mage_Shipping_Model_Rate_Request $request
-     * @return Mage_Shipping_Model_Shipping
+     * @return $this
      */
     public function collectCarrierRates($carrierCode, $request)
     {
@@ -364,7 +364,7 @@ class Mage_Shipping_Model_Shipping
      *
      * @param Varien_Object $address
      * @param null|bool|array $limitCarrier
-     * @return Mage_Shipping_Model_Shipping
+     * @return $this
      */
     public function collectRatesByAddress(Varien_Object $address, $limitCarrier = null)
     {
@@ -395,7 +395,7 @@ class Mage_Shipping_Model_Shipping
      * Set part of carrier xml config path
      *
      * @param string $code
-     * @return Mage_Shipping_Model_Shipping
+     * @return $this
      */
     public function setCarrierAvailabilityConfigField($code = 'active')
     {

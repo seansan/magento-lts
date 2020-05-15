@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -46,7 +46,7 @@ class Mage_Core_Model_Resource_Website extends Mage_Core_Model_Resource_Db_Abstr
     /**
      * Initialize unique fields
      *
-     * @return Mage_Core_Model_Resource_Website
+     * @return $this
      */
     protected function _initUniqueFields()
     {
@@ -61,7 +61,7 @@ class Mage_Core_Model_Resource_Website extends Mage_Core_Model_Resource_Db_Abstr
      * Validate website code before object save
      *
      * @param Mage_Core_Model_Abstract $object
-     * @return Mage_Core_Model_Resource_Website
+     * @return $this
      */
     protected function _beforeSave(Mage_Core_Model_Abstract $object)
     {
@@ -76,7 +76,7 @@ class Mage_Core_Model_Resource_Website extends Mage_Core_Model_Resource_Db_Abstr
      * Perform actions after object save
      *
      * @param Mage_Core_Model_Abstract $object
-     * @return Mage_Core_Model_Resource_Website
+     * @return $this
      */
     protected function _afterSave(Mage_Core_Model_Abstract $object)
     {
@@ -92,7 +92,7 @@ class Mage_Core_Model_Resource_Website extends Mage_Core_Model_Resource_Db_Abstr
      * Remove core configuration data after delete website
      *
      * @param Mage_Core_Model_Abstract $model
-     * @return Mage_Core_Model_Resource_Website
+     * @return $this
      */
     protected function _afterDelete(Mage_Core_Model_Abstract $model)
     {

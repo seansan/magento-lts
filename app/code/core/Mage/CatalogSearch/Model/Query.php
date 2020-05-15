@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogSearch
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -139,7 +139,7 @@ class Mage_CatalogSearch_Model_Query extends Mage_Core_Model_Abstract
      * Load Query object by query string
      *
      * @param string $text
-     * @return Mage_CatalogSearch_Model_Query
+     * @return $this
      */
     public function loadByQuery($text)
     {
@@ -153,7 +153,7 @@ class Mage_CatalogSearch_Model_Query extends Mage_Core_Model_Abstract
      * Load Query object only by query text (skip 'synonym For')
      *
      * @param string $text
-     * @return Mage_CatalogSearch_Model_Query
+     * @return $this
      */
     public function loadByQueryText($text)
     {
@@ -167,7 +167,6 @@ class Mage_CatalogSearch_Model_Query extends Mage_Core_Model_Abstract
      * Set Store Id
      *
      * @param int $storeId
-     * @return Mage_CatalogSearch_Model_Query
      */
     public function setStoreId($storeId)
     {
@@ -190,7 +189,7 @@ class Mage_CatalogSearch_Model_Query extends Mage_Core_Model_Abstract
     /**
      * Prepare save query for result
      *
-     * @return Mage_CatalogSearch_Model_Query
+     * @return $this
      */
     public function prepare()
     {

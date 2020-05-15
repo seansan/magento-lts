@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -146,7 +146,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
     /**
      * Loyout xml generation
      *
-     * @return Mage_Core_Model_Layout
+     * @return $this
      */
     public function generateXml()
     {
@@ -222,7 +222,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
      *
      * @param Varien_Simplexml_Element $node
      * @param Varien_Simplexml_Element $parent
-     * @return Mage_Core_Model_Layout
+     * @return $this
      */
     protected function _generateBlock($node, $parent)
     {
@@ -285,7 +285,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
      *
      * @param Varien_Simplexml_Element $node
      * @param Varien_Simplexml_Element $parent
-     * @return Mage_Core_Model_Layout
+     * @return $this
      */
     protected function _generateAction($node, $parent)
     {
@@ -440,7 +440,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
             return false;
         }
 
-        if (empty($name) || '.'===$name{0}) {
+        if (empty($name) || '.'===$name[0]) {
             $block->setIsAnonymous(true);
             if (!empty($name)) {
                 $block->setAnonSuffix(substr($name, 1));

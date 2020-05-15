@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -133,7 +133,7 @@ class Mage_XmlConnect_Model_Catalog_Category_Image extends Mage_Catalog_Model_Pr
      * Set new file
      *
      * @param string $filePath
-     * @return Mage_XmlConnect_Model_Catalog_Category_Image
+     * @return $this
      */
     public function setNewFile($filePath)
     {

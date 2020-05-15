@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -93,7 +93,7 @@ class Mage_Sales_Model_Resource_Setup extends Mage_Eav_Model_Entity_Setup
      * @param int|string $entityTypeId
      * @param string $code
      * @param array $attr
-     * @return Mage_Sales_Model_Resource_Setup
+     * @return $this
      */
     public function addAttribute($entityTypeId, $code, array $attr)
     {
@@ -114,7 +114,7 @@ class Mage_Sales_Model_Resource_Setup extends Mage_Eav_Model_Entity_Setup
      * @param string $table
      * @param string $attribute
      * @param array $attr
-     * @return Mage_Sales_Model_Resource_Setup
+     * @return $this
      */
     protected function _addFlatAttribute($table, $attribute, $attr)
     {
@@ -134,7 +134,7 @@ class Mage_Sales_Model_Resource_Setup extends Mage_Eav_Model_Entity_Setup
      * @param string $attribute
      * @param array $attr
      * @param string $entityTypeId
-     * @return Mage_Sales_Model_Resource_Setup
+     * @return $this
      */
     protected function _addGridAttribute($table, $attribute, $attr, $entityTypeId)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -155,7 +155,7 @@ class Mage_Core_Model_Website extends Mage_Core_Model_Abstract
      *
      * @param int|string $id
      * @param string $field
-     * @return Mage_Core_Model_Website
+     * @return $this
      */
     public function load($id, $field = null)
     {
@@ -476,7 +476,7 @@ class Mage_Core_Model_Website extends Mage_Core_Model_Abstract
     /**
      * rewrite in order to clear configuration cache
      *
-     * @return Mage_Core_Model_Website
+     * @return $this
      */
     protected function _afterDelete()
     {

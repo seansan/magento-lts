@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Newsletter
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -83,7 +83,6 @@ class Mage_Newsletter_Model_Template extends Mage_Core_Model_Email_Template_Abst
      * Validate Newsletter template
      *
      * @throws Mage_Core_Exception
-     * @return bool
      */
     public function validate()
     {
@@ -119,7 +118,7 @@ class Mage_Newsletter_Model_Template extends Mage_Core_Model_Email_Template_Abst
     /**
      * Processing object before save data
      *
-     * @return Mage_Newsletter_Model_Template
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -131,7 +130,7 @@ class Mage_Newsletter_Model_Template extends Mage_Core_Model_Email_Template_Abst
      * Load template by code
      *
      * @param string $templateCode
-     * @return Mage_Newsletter_Model_Template
+     * @return $this
      */
     public function loadByCode($templateCode)
     {
@@ -365,7 +364,7 @@ class Mage_Newsletter_Model_Template extends Mage_Core_Model_Email_Template_Abst
     /**
      * Prepare Process (with save)
      *
-     * @return Mage_Newsletter_Model_Template
+     * @return $this
      * @deprecated since 1.4.0.1
      */
     public function preprocess()

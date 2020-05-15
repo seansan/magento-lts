@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Newsletter
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -63,7 +63,7 @@ class Mage_Newsletter_Model_Problem extends Mage_Core_Model_Abstract
      * Add Subscriber Data
      *
      * @param Mage_Newsletter_Model_Subscriber $subscriber
-     * @return Mage_Newsletter_Model_Problem
+     * @return $this
      */
     public function addSubscriberData(Mage_Newsletter_Model_Subscriber $subscriber)
     {
@@ -75,7 +75,7 @@ class Mage_Newsletter_Model_Problem extends Mage_Core_Model_Abstract
      * Add Queue Data
      *
      * @param Mage_Newsletter_Model_Queue $queue
-     * @return Mage_Newsletter_Model_Problem
+     * @return $this
      */
     public function addQueueData(Mage_Newsletter_Model_Queue $queue)
     {
@@ -87,7 +87,7 @@ class Mage_Newsletter_Model_Problem extends Mage_Core_Model_Abstract
      * Add Error Data
      *
      * @param Exception $e
-     * @return Mage_Newsletter_Model_Problem
+     * @return $this
      */
     public function addErrorData(Exception $e)
     {
@@ -118,7 +118,7 @@ class Mage_Newsletter_Model_Problem extends Mage_Core_Model_Abstract
     /**
      * Unsubscribe Subscriber
      *
-     * @return Mage_Newsletter_Model_Problem
+     * @return $this
      */
     public function unsubscribe()
     {

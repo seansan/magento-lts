@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -77,7 +77,7 @@ class Mage_Catalog_Model_Product_Link extends Mage_Core_Model_Abstract
     }
 
     /**
-     * @return Mage_Catalog_Model_Product_Link
+     * @return $this
      */
     public function useCrossSellLinks()
     {
@@ -151,7 +151,7 @@ class Mage_Catalog_Model_Product_Link extends Mage_Core_Model_Abstract
      * Save grouped product relation links
      *
      * @param Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Product_Link
+     * @return $this
      */
     public function saveGroupedLinks($product)
     {

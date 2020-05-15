@@ -14,7 +14,7 @@
  *
  * @category    Phoenix
  * @package     Phoenix_Moneybookers
- * @copyright   Copyright (c) 2018 Phoenix Medien GmbH & Co. KG (http://www.phoenix-medien.de)
+ * @copyright   Copyright (c) 2020 Phoenix Medien GmbH & Co. KG (http://www.phoenix-medien.de)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 abstract class Phoenix_Moneybookers_Model_Abstract extends Mage_Payment_Model_Method_Abstract
@@ -73,7 +73,7 @@ abstract class Phoenix_Moneybookers_Model_Abstract extends Mage_Payment_Model_Me
      * Capture payment through Moneybookers api
      *
      * @param Varien_Object $payment
-     * @param decimal $amount
+     * @param float $amount
      * @return Phoenix_Moneybookers_Model_Abstract
      */
     public function capture(Varien_Object $payment, $amount)

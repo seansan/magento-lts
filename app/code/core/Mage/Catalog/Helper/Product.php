@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -378,7 +378,7 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
      *
      * @param  Mage_Catalog_Model_Product $product
      * @param  Varien_Object $buyRequest
-     * @return Mage_Catalog_Helper_Product
+     * @return $this
      */
     public function prepareProductOptions($product, $buyRequest)
     {
@@ -480,7 +480,7 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
      * For instance, during order creation in the backend admin has ability to add any products to order
      *
      * @param bool $skipSaleableCheck
-     * @return Mage_Catalog_Helper_Product
+     * @return $this
      */
     public function setSkipSaleableCheck($skipSaleableCheck = false)
     {
@@ -534,5 +534,42 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
         }
 
         return $qty;
+    }
+
+    /**
+     * Get default product value by field name
+     *
+     * @param string $fieldName
+     * @param string $productType
+     * @return int
+     */
+    public function getDefaultProductValue($fieldName, $productType)
+    {
+        $fieldData = $this->getFieldset($fieldName) ? (array) $this->getFieldset($fieldName) : null;
+        if (
+            count($fieldData)
+            && array_key_exists($productType, $fieldData['product_type'])
+            && (bool)$fieldData['use_config']
+        ) {
+            return $fieldData['inventory'];
+        }
+        return self::DEFAULT_QTY;
+    }
+
+    /**
+     * Return array from config by fieldset name and area
+     *
+     * @param null|string $field
+     * @param string $fieldset
+     * @param string $area
+     * @return array|null
+     */
+    public function getFieldset($field = null, $fieldset = 'catalog_product_dataflow', $area = 'admin')
+    {
+        $fieldsetData = Mage::getConfig()->getFieldset($fieldset, $area);
+        if ($fieldsetData) {
+            return $fieldsetData ? $fieldsetData->$field : $fieldsetData;
+        }
+        return $fieldsetData;
     }
 }

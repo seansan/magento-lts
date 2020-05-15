@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -42,7 +42,7 @@ class Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
     /**
      * Get rid of unnecessary collection initialization
      *
-     * @return Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
+     * @return $this
      */
     protected function _prepareCollection()
     {
@@ -53,7 +53,7 @@ class Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
      * Init order collection
      *
      * @param int|null $storeId
-     * @return Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
+     * @return $this
      */
     protected function _initCollection($storeId)
     {
@@ -75,7 +75,7 @@ class Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
     /**
      * Clear collection
      *
-     * @return Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
+     * @return $this
      */
     protected function _clearCollection()
     {
@@ -87,7 +87,7 @@ class Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
      * Add customers statistic to xml object
      *
      * @param Mage_XmlConnect_Model_Simplexml_Element $xmlObj
-     * @return Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_Customers
+     * @return $this
      */
     public function addCustomersToXmlObj(Mage_XmlConnect_Model_Simplexml_Element $xmlObj)
     {

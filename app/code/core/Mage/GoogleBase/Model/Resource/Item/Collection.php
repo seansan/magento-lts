@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_GoogleBase
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,7 +47,7 @@ class Mage_GoogleBase_Model_Resource_Item_Collection extends Mage_Core_Model_Res
     /**
      * Init collection select
      *
-     * @return Mage_GoogleBase_Model_Resource_Item_Collection
+     * @return $this
      */
     protected function _initSelect()
     {
@@ -60,7 +60,7 @@ class Mage_GoogleBase_Model_Resource_Item_Collection extends Mage_Core_Model_Res
      * @deprecated
      *
      * @param int $storeId
-     * @return Mage_GoogleBase_Model_Resource_Item_Collection
+     * @return $this
      */
     public function addStoreFilterId($storeId)
     {
@@ -71,7 +71,7 @@ class Mage_GoogleBase_Model_Resource_Item_Collection extends Mage_Core_Model_Res
      * Filter collection by specified store ids
      *
      * @param array|int $storeIds
-     * @return Mage_GoogleBase_Model_Resource_Item_Collection
+     * @return $this
      */
     public function addStoreFilter($storeIds)
     {
@@ -83,7 +83,7 @@ class Mage_GoogleBase_Model_Resource_Item_Collection extends Mage_Core_Model_Res
      * Filter collection by product id
      *
      * @param int $productId
-     * @return Mage_GoogleBase_Model_Resource_Item_Collection
+     * @return $this
      */
     public function addProductFilterId($productId)
     {
@@ -96,7 +96,7 @@ class Mage_GoogleBase_Model_Resource_Item_Collection extends Mage_Core_Model_Res
      *
      * @param string $field
      * @param null|string|array $condition
-     * @return Mage_GoogleBase_Model_Resource_Item_Collection
+     * @return $this
      */
     public function addFieldToFilter($field, $condition = null)
     {
@@ -113,7 +113,7 @@ class Mage_GoogleBase_Model_Resource_Item_Collection extends Mage_Core_Model_Res
     /**
      * Join product and type data
      *
-     * @return Mage_GoogleBase_Model_Resource_Item_Collection
+     * @return $this
      */
     protected function _joinTables()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -122,7 +122,7 @@ class Mage_Core_Model_Resource_Setup_Query_Modifier
      * @param string $sql
      * @param string $column
      * @param array $refColumnDefinition
-     * @return Mage_Core_Model_Resource_Setup_Query_Modifier
+     * @return $this
      */
     protected function _fixColumnDefinitionInSql(&$sql, $column, $refColumnDefinition)
     {
@@ -180,7 +180,7 @@ class Mage_Core_Model_Resource_Setup_Query_Modifier
      * @param string $sql
      * @param string $column
      * @param array $refColumnDefinition
-     * @return Mage_Core_Model_Resource_Setup_Query_Modifier
+     * @return $this
      */
     protected function _fixColumnDefinitionInTable($table, $column, $refColumnDefinition)
     {
@@ -266,7 +266,7 @@ class Mage_Core_Model_Resource_Setup_Query_Modifier
      *
      * @param string $sql
      * @param array $bind
-     * @return Mage_Core_Model_Resource_Setup_Query_Modifier
+     * @return $this
      */
     public function processQuery(&$sql, &$bind)
     {

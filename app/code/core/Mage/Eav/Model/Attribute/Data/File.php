@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -141,7 +141,7 @@ class Mage_Eav_Model_Attribute_Data_File extends Mage_Eav_Model_Attribute_Data_A
                 return array(
                     Mage::helper('eav')->__('"%s" exceeds the allowed file size.', $label)
                 );
-            };
+            }
         }
 
         return array();
@@ -184,6 +184,7 @@ class Mage_Eav_Model_Attribute_Data_File extends Mage_Eav_Model_Attribute_Data_A
         }
 
         if (count($errors) == 0) {
+            $attribute->setAttributeValidationAsPassed();
             return true;
         }
 
@@ -195,7 +196,7 @@ class Mage_Eav_Model_Attribute_Data_File extends Mage_Eav_Model_Attribute_Data_A
      *
      * @param Mage_Core_Model_Abstract $entity
      * @param array|string $value
-     * @return Mage_Eav_Model_Attribute_Data_File
+     * @return $this
      */
     public function compactValue($value)
     {
@@ -204,6 +205,10 @@ class Mage_Eav_Model_Attribute_Data_File extends Mage_Eav_Model_Attribute_Data_A
         }
 
         $attribute = $this->getAttribute();
+        if (!$attribute->isAttributeValidationPassed()) {
+            return $this;
+        }
+
         $original  = $this->getEntity()->getData($attribute->getAttributeCode());
         $toDelete  = false;
         if ($original) {
@@ -248,7 +253,7 @@ class Mage_Eav_Model_Attribute_Data_File extends Mage_Eav_Model_Attribute_Data_A
      * Restore attribute value from SESSION to entity model
      *
      * @param array|string $value
-     * @return Mage_Eav_Model_Attribute_Data_File
+     * @return $this
      */
     public function restoreValue($value)
     {

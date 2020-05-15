@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Weee
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -385,7 +385,7 @@ class Mage_Weee_Model_Observer extends Mage_Core_Model_Abstract
      * in the backend
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_Weee_Model_Observer
+     * @return $this
      */
     public function setSessionQuoteStore(Varien_Event_Observer $observer)
     {

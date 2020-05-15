@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -98,7 +98,7 @@ class Mage_XmlConnect_Block_Homebanners extends Mage_Core_Block_Abstract
      *
      * @param Mage_XmlConnect_Model_Simplexml_Element $imageXml
      * @param int $imageId
-     * @return Mage_XmlConnect_Block_Homebanners
+     * @return $this
      */
     protected function _addImageAction(Mage_XmlConnect_Model_Simplexml_Element $imageXml, $imageId)
     {

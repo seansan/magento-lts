@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Wishlist
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,7 +47,7 @@ class Mage_Wishlist_Model_Resource_Wishlist_Collection extends Mage_Core_Model_R
      * Filter collection by customer
      *
      * @param Mage_Customer_Model_Customer $customer
-     * @return Mage_Wishlist_Model_Resource_Wishlist_Collection
+     * @return $this
      */
     public function filterByCustomer(Mage_Customer_Model_Customer $customer)
     {
@@ -58,7 +58,7 @@ class Mage_Wishlist_Model_Resource_Wishlist_Collection extends Mage_Core_Model_R
      * Filter collection by customer id
      *
      * @param int $customerId
-     * @return Mage_Wishlist_Model_Resource_Wishlist_Collection
+     * @return $this
      */
     public function filterByCustomerId($customerId)
     {
@@ -70,7 +70,7 @@ class Mage_Wishlist_Model_Resource_Wishlist_Collection extends Mage_Core_Model_R
      * Filter collection by customer ids
      *
      * @param array $customerIds
-     * @return Mage_Wishlist_Model_Resource_Wishlist_Collection
+     * @return $this
      */
     public function filterByCustomerIds(array $customerIds)
     {

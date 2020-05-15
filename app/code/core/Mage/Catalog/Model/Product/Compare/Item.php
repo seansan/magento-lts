@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -87,7 +87,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
     /**
      * Set current store before save
      *
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -102,7 +102,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
     /**
      * Save object data
      *
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function save()
     {
@@ -116,7 +116,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
      * Add customer data from customer object
      *
      * @param Mage_Customer_Model_Customer $customer
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function addCustomerData(Mage_Customer_Model_Customer $customer)
     {
@@ -128,7 +128,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
      * Set visitor
      *
      * @param int $visitorId
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function addVisitorId($visitorId)
     {
@@ -140,7 +140,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
      * Load compare item by product
      *
      * @param mixed $product
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function loadByProduct($product)
     {
@@ -152,7 +152,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
      * Set product data
      *
      * @param mixed $product
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function addProductData($product)
     {
@@ -184,7 +184,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
     /**
      * Customer login bind process
      *
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function bindCustomerLogin()
     {
@@ -198,7 +198,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
      * Customer logout bind process
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function bindCustomerLogout(Varien_Event_Observer $observer = null)
     {
@@ -211,7 +211,7 @@ class Mage_Catalog_Model_Product_Compare_Item extends Mage_Core_Model_Abstract
     /**
      * Clean compare items
      *
-     * @return Mage_Catalog_Model_Product_Compare_Item
+     * @return $this
      */
     public function clean()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -53,7 +53,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Product_Collection
 
     /**
      * Init select
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Product_Collection
+     * @return $this
      */
     protected function _initSelect()
     {
@@ -70,7 +70,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Product_Collection
      * Set Product filter to result
      *
      * @param Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Product_Collection
+     * @return $this
      */
     public function setProductFilter($product)
     {

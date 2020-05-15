@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -40,7 +40,7 @@ class Mage_Catalog_Model_Resource_Product_Attribute_Backend_Urlkey
      * Before save
      *
      * @param Varien_Object $object
-     * @return Mage_Catalog_Model_Resource_Product_Attribute_Backend_Urlkey
+     * @return $this
      */
     public function beforeSave($object)
     {
@@ -60,7 +60,7 @@ class Mage_Catalog_Model_Resource_Product_Attribute_Backend_Urlkey
      * Refresh product rewrites
      *
      * @param Varien_Object $object
-     * @return Mage_Catalog_Model_Resource_Product_Attribute_Backend_Urlkey
+     * @return $this
      */
     public function afterSave($object)
     {

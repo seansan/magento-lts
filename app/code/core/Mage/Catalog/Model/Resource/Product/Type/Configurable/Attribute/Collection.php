@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -81,7 +81,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
      * Set Product filter (Configurable)
      *
      * @param Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     public function setProductFilter($product)
     {
@@ -93,7 +93,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
      * Set order collection by Position
      *
      * @param string $dir
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     public function orderByPosition($dir = self::SORT_ORDER_ASC)
     {
@@ -114,7 +114,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
     /**
      * After load collection process
      *
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     protected function _afterLoad()
     {
@@ -137,7 +137,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
     /**
      * Add product attributes to collection items
      *
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     protected function _addProductAttributes()
     {
@@ -152,7 +152,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
     /**
      * Add Associated Product Filters (From Product Type Instance)
      *
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     public function _addAssociatedProductFilters()
     {
@@ -164,7 +164,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
     /**
      * Load attribute labels
      *
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     protected function _loadLabels()
     {
@@ -208,7 +208,7 @@ class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
     /**
      * Load attribute prices information
      *
-     * @return Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+     * @return $this
      */
     protected function _loadPrices()
     {

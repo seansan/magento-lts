@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Oauth
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -95,7 +95,7 @@ class Mage_Oauth_Model_Token extends Mage_Core_Model_Abstract
     /**
      * "After save" actions
      *
-     * @return Mage_Oauth_Model_Token
+     * @return $this
      */
     protected function _afterSave()
     {
@@ -115,7 +115,7 @@ class Mage_Oauth_Model_Token extends Mage_Core_Model_Abstract
      *
      * @param int $userId Authorization user identifier
      * @param string $userType Authorization user type
-     * @return Mage_Oauth_Model_Token
+     * @return $this
      */
     public function authorize($userId, $userType)
     {
@@ -147,7 +147,7 @@ class Mage_Oauth_Model_Token extends Mage_Core_Model_Abstract
     /**
      * Convert token to access type
      *
-     * @return Mage_Oauth_Model_Token
+     * @return $this
      */
     public function convertToAccess()
     {
@@ -170,7 +170,7 @@ class Mage_Oauth_Model_Token extends Mage_Core_Model_Abstract
      *
      * @param int $consumerId Consumer identifier
      * @param string $callbackUrl Callback URL
-     * @return Mage_Oauth_Model_Token
+     * @return $this
      */
     public function createRequestToken($consumerId, $callbackUrl)
     {

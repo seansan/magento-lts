@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -243,7 +243,7 @@ class Mage_Sales_Model_Order_Item extends Mage_Core_Model_Abstract
     /**
      * Prepare data before save
      *
-     * @return Mage_Sales_Model_Order_Item
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -276,7 +276,7 @@ class Mage_Sales_Model_Order_Item extends Mage_Core_Model_Abstract
     /**
      * Get parent item
      *
-     * @return Mage_Sales_Model_Order_Item || null
+     * @return $this || null
      */
     public function getParentItem()
     {
@@ -520,7 +520,7 @@ class Mage_Sales_Model_Order_Item extends Mage_Core_Model_Abstract
      */
     public function getStatus()
     {
-        return $this->getStatusName($this->getStatusId());
+        return self::getStatusName($this->getStatusId());
     }
 
     /**
@@ -542,7 +542,7 @@ class Mage_Sales_Model_Order_Item extends Mage_Core_Model_Abstract
     /**
      * Cancel order item
      *
-     * @return Mage_Sales_Model_Order_Item
+     * @return $this
      */
     public function cancel()
     {

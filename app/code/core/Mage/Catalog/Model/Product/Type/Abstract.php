@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -707,7 +707,6 @@ abstract class Mage_Catalog_Model_Product_Type_Abstract
     /**
      * Check if product qty is fractional number
      *
-     * @param Mage_Catalog_Model_Product $product
      * @return bool
      */
     public function canUseQtyDecimals()
@@ -773,7 +772,7 @@ abstract class Mage_Catalog_Model_Product_Type_Abstract
      * Default action to get weight of product
      *
      * @param Mage_Catalog_Model_Product $product
-     * @return decimal
+     * @return float
      */
     public function getWeight($product = null)
     {
@@ -843,7 +842,7 @@ abstract class Mage_Catalog_Model_Product_Type_Abstract
      * Set store filter for associated products
      *
      * @param $store int|Mage_Core_Model_Store
-     * @return Mage_Catalog_Model_Product_Type_Configurable
+     * @return $this
      */
     public function setStoreFilter($store=null, $product = null)
     {
@@ -853,7 +852,7 @@ abstract class Mage_Catalog_Model_Product_Type_Abstract
     }
 
     /**
-     * Allow for updates of chidren qty's
+     * Allow for updates of children qty's
      * (applicable for complicated product types. As default returns false)
      *
      * @return boolean false

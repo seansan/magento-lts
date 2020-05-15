@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -391,7 +391,7 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
      * @param Mage_Catalog_Model_Product $product
      * @param sting $file
      * @param array $data
-     * @return Mage_Catalog_Model_Product_Attribute_Backend_Media
+     * @return $this
      */
     public function updateImage(Mage_Catalog_Model_Product $product, $file, $data)
     {
@@ -429,7 +429,7 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
      *
      * @param Mage_Catalog_Model_Product $product
      * @param string $file
-     * @return Mage_Catalog_Model_Product_Attribute_Backend_Media
+     * @return $this
      */
     public function removeImage(Mage_Catalog_Model_Product $product, $file)
     {
@@ -481,7 +481,7 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
      *
      * @param Mage_Catalog_Model_Product $product
      * @param string|array $mediaAttribute
-     * @return Mage_Catalog_Model_Product_Attribute_Backend_Media
+     * @return $this
      */
     public function clearMediaAttribute(Mage_Catalog_Model_Product $product, $mediaAttribute)
     {
@@ -506,7 +506,7 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
      * @param Mage_Catalog_Model_Product $product
      * @param string|array $mediaAttribute
      * @param string $value
-     * @return Mage_Catalog_Model_Product_Attribute_Backend_Media
+     * @return $this
      */
     public function setMediaAttribute(Mage_Catalog_Model_Product $product, $mediaAttribute, $value)
     {
@@ -590,8 +590,8 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
     /**
      * Check whether file to move exists. Getting unique name
      *
-     * @param <type> $file
-     * @param <type> $dirsep
+     * @param string $file
+     * @param string $dirsep
      * @return string
      */
     protected function _getUniqueFileName($file, $dirsep) {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -367,7 +367,7 @@ abstract class Mage_Sales_Model_Resource_Order_Abstract extends Mage_Sales_Model
     /**
      * Perform actions before object save
      *
-     * @param Varien_Object $object
+     * @param Mage_Core_Model_Abstract $object
      * @return Mage_Sales_Model_Resource_Order_Abstract
      */
     protected function _beforeSave(Mage_Core_Model_Abstract $object)

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Widget
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -50,7 +50,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Chooser_Block
      * Setter
      *
      * @param array $allowedBlocks
-     * @return Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Chooser_Block
+     * @return $this
      */
     public function setAllowedBlocks($allowedBlocks)
     {
@@ -62,7 +62,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Chooser_Block
      * Add allowed block
      *
      * @param string $block
-     * @return Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Chooser_Block
+     * @return $this
      */
     public function addAllowedBlock($block)
     {
@@ -85,7 +85,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Chooser_Block
      * If string given exlopde to array by ',' delimiter
      *
      * @param string|array $layoutHandle
-     * @return Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Chooser_Block
+     * @return $this
      */
     public function setLayoutHandle($layoutHandle)
     {

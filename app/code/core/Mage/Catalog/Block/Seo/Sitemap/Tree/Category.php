@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -90,7 +90,7 @@ class Mage_Catalog_Block_Seo_Sitemap_Tree_Category extends Mage_Catalog_Block_Se
     /**
      * Prepare array of categories separated into pages
      *
-     * @return Mage_Catalog_Block_Seo_Sitemap_Tree_Category
+     * @return $this
      */
     public function prepareCategoriesToPages()
     {
@@ -143,7 +143,7 @@ class Mage_Catalog_Block_Seo_Sitemap_Tree_Category extends Mage_Catalog_Block_Se
     /**
      * Prepare collection filtered by paths
      *
-     * @return Mage_Catalog_Block_Seo_Sitemap_Tree_Category
+     * @return $this
      */
     protected function _prepareCollection()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Checkout
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -84,7 +84,7 @@ class Mage_Checkout_Block_Cart_Sidebar extends Mage_Checkout_Block_Cart_Minicart
      * It will include tax, if required by config settings.
      *
      * @param   bool $skipTax flag for getting price with tax or not. Ignored in case when we display just subtotal incl.tax
-     * @return  decimal
+     * @return  float
      */
     public function getSubtotal($skipTax = true)
     {
@@ -114,7 +114,7 @@ class Mage_Checkout_Block_Cart_Sidebar extends Mage_Checkout_Block_Cart_Minicart
      * Get subtotal, including tax.
      * Will return > 0 only if appropriate config settings are enabled.
      *
-     * @return decimal
+     * @return float
      */
     public function getSubtotalInclTax()
     {
@@ -254,7 +254,7 @@ class Mage_Checkout_Block_Cart_Sidebar extends Mage_Checkout_Block_Cart_Minicart
      * Deserialize renders from string
      *
      * @param string $renders
-     * @return Mage_Checkout_Block_Cart_Sidebar
+     * @return $this
      */
     public function deserializeRenders($renders)
     {

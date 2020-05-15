@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -557,7 +557,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
      * Set Return Path
      *
      * @param string $email
-     * @return Mage_Core_Model_Email_Template
+     * @return $this
      */
     public  function setReturnPath($email)
     {
@@ -569,7 +569,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
      * Add Reply-To header
      *
      * @param string $email
-     * @return Mage_Core_Model_Email_Template
+     * @return $this
      */
     public function setReplyTo($email)
     {
@@ -623,7 +623,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
     /**
      * Validate email template code
      *
-     * @return Mage_Core_Model_Email_Template
+     * @return $this
      */
     protected function _beforeSave()
     {

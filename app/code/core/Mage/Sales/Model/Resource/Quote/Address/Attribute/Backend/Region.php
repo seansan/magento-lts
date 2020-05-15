@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -39,7 +39,7 @@ class Mage_Sales_Model_Resource_Quote_Address_Attribute_Backend_Region
      * Set region to the attribute
      *
      * @param Varien_Object $object
-     * @return Mage_Sales_Model_Resource_Quote_Address_Attribute_Backend_Region
+     * @return $this
      */
     public function beforeSave($object)
     {

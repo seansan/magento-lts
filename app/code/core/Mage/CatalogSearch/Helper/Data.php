@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogSearch
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -256,7 +256,7 @@ class Mage_CatalogSearch_Helper_Data extends Mage_Core_Helper_Abstract
      * Add Note message
      *
      * @param string $message
-     * @return Mage_CatalogSearch_Helper_Data
+     * @return $this
      */
     public function addNoteMessage($message)
     {
@@ -268,7 +268,7 @@ class Mage_CatalogSearch_Helper_Data extends Mage_Core_Helper_Abstract
      * Set Note messages
      *
      * @param array $messages
-     * @return Mage_CatalogSearch_Helper_Data
+     * @return $this
      */
     public function setNoteMessages(array $messages)
     {
@@ -290,7 +290,7 @@ class Mage_CatalogSearch_Helper_Data extends Mage_Core_Helper_Abstract
      * Check query of a warnings
      *
      * @param mixed $store
-     * @return Mage_CatalogSearch_Helper_Data
+     * @return $this
      */
     public function checkNotes($store = null)
     {

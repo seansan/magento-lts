@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Oauth
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -77,7 +77,7 @@ class Mage_Oauth_Customer_TokenController extends Mage_Core_Controller_Front_Act
     /**
      * Redirect to referrer URL or otherwise to index page without params
      *
-     * @return Mage_Oauth_Customer_TokenController
+     * @return $this
      */
     protected function _redirectBack()
     {

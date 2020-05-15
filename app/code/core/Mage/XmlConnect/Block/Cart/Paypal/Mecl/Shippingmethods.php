@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -38,7 +38,7 @@ class Mage_XmlConnect_Block_Cart_Paypal_Mecl_Shippingmethods extends Mage_Paypal
      *
      * @param Mage_XmlConnect_Model_Simplexml_Element $xmlObj
      * @param Mage_Sales_Model_Quote_Address_Rate $rate
-     * @return Mage_XmlConnect_Block_Cart_Paypal_Mecl_Shippingmethods
+     * @return $this
      */
     protected function _addPriceToXmlObj($xmlObj, $rate)
     {
@@ -148,7 +148,7 @@ class Mage_XmlConnect_Block_Cart_Paypal_Mecl_Shippingmethods extends Mage_Paypal
      * Add message to describe that shipping is not required or not available
      *
      * @param Mage_XmlConnect_Model_Simplexml_Element $methodListXmlObj
-     * @return Mage_XmlConnect_Block_Cart_Paypal_Mecl_Shippingmethods
+     * @return $this
      */
     protected function _addNoShippingMessage($methodListXmlObj)
     {

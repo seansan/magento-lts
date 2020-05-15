@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -64,7 +64,7 @@ class Mage_Sales_Model_Resource_Order_Collection extends Mage_Sales_Model_Resour
     /**
      * Add items count expr to collection select, backward capability with eav structure
      *
-     * @return Mage_Sales_Model_Resource_Order_Collection
+     * @return $this
      */
     public function addItemCountExpr()
     {
@@ -109,7 +109,7 @@ class Mage_Sales_Model_Resource_Order_Collection extends Mage_Sales_Model_Resour
      * Join table sales_flat_order_address to select for billing and shipping order addresses.
      * Create corillation map
      *
-     * @return Mage_Sales_Model_Resource_Order_Collection
+     * @return $this
      */
     protected function _addAddressFields()
     {
@@ -177,7 +177,7 @@ class Mage_Sales_Model_Resource_Order_Collection extends Mage_Sales_Model_Resour
      *
      * @param string $field
      * @param null|string|array $condition
-     * @return Mage_Sales_Model_Resource_Order_Collection
+     * @return $this
      */
     public function addFieldToSearchFilter($field, $condition = null)
     {
@@ -191,7 +191,7 @@ class Mage_Sales_Model_Resource_Order_Collection extends Mage_Sales_Model_Resour
      *
      * @param array $attributes
      * @param array|integer|string|null $condition
-     * @return Mage_Sales_Model_Resource_Order_Collection
+     * @return $this
      */
     public function addAttributeToSearchFilter($attributes, $condition = null)
     {
@@ -213,7 +213,7 @@ class Mage_Sales_Model_Resource_Order_Collection extends Mage_Sales_Model_Resour
      * Add filter by specified billing agreements
      *
      * @param int|array $agreements
-     * @return Mage_Sales_Model_Resource_Order_Collection
+     * @return $this
      */
     public function addBillingAgreementsFilter($agreements)
     {
@@ -231,7 +231,7 @@ class Mage_Sales_Model_Resource_Order_Collection extends Mage_Sales_Model_Resour
      * Add filter by specified recurring profile id(s)
      *
      * @param array|int $ids
-     * @return Mage_Sales_Model_Resource_Order_Collection
+     * @return $this
      */
     public function addRecurringProfilesFilter($ids)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_ImportExport
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -135,7 +135,7 @@ class Mage_ImportExport_Model_Export_Entity_Product extends Mage_ImportExport_Mo
     /**
      * Initialize attribute sets code-to-id pairs.
      *
-     * @return Mage_ImportExport_Model_Export_Entity_Product
+     * @return $this
      */
     protected function _initAttributeSets()
     {
@@ -150,7 +150,7 @@ class Mage_ImportExport_Model_Export_Entity_Product extends Mage_ImportExport_Mo
     /**
      * Initialize categories ID to text-path hash.
      *
-     * @return Mage_ImportExport_Model_Export_Entity_Product
+     * @return $this
      */
     protected function _initCategories()
     {
@@ -178,7 +178,7 @@ class Mage_ImportExport_Model_Export_Entity_Product extends Mage_ImportExport_Mo
      * Initialize product type models.
      *
      * @throws Exception
-     * @return Mage_ImportExport_Model_Export_Entity_Product
+     * @return $this
      */
     protected function _initTypeModels()
     {
@@ -211,7 +211,7 @@ class Mage_ImportExport_Model_Export_Entity_Product extends Mage_ImportExport_Mo
     /**
      * Initialize website values.
      *
-     * @return Mage_ImportExport_Model_Export_Entity_Product
+     * @return $this
      */
     protected function _initWebsites()
     {
@@ -1117,7 +1117,7 @@ class Mage_ImportExport_Model_Export_Entity_Product extends Mage_ImportExport_Mo
     /**
      * Initialize attribute option values and types.
      *
-     * @return Mage_ImportExport_Model_Export_Entity_Product
+     * @return $this
      */
     protected function _initAttributes()
     {

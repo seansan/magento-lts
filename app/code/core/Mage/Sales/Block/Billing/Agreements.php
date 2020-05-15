@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -79,9 +79,9 @@ class Mage_Sales_Block_Billing_Agreements extends Mage_Core_Block_Template
     /**
      * Retrieve item value by key
      *
-     * @param Varien_Object $item
+     * @param Mage_Sales_Model_Billing_Agreement $item
      * @param string $key
-     * @return mixed
+     * @return string
      */
     public function getItemValue(Mage_Sales_Model_Billing_Agreement $item, $key)
     {

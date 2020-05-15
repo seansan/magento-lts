@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -136,6 +136,7 @@ abstract class Mage_Core_Model_Template extends Mage_Core_Model_Abstract
      * Event is not dispatched.
      *
      * @param int|string $storeId
+     * @param string $area
      */
     public function emulateDesign($storeId, $area=self::DEFAULT_DESIGN_AREA)
     {

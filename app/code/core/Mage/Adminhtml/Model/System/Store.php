@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Adminhtml
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -68,7 +68,7 @@ class Mage_Adminhtml_Model_System_Store extends Varien_Object
      * Init model
      * Load Website, Group and Store collections
      *
-     * @return Mage_Adminhtml_Model_System_Store
+     * @return $this
      */
     public function __construct()
     {
@@ -78,7 +78,7 @@ class Mage_Adminhtml_Model_System_Store extends Varien_Object
     /**
      * Load/Reload Website collection
      *
-     * @return array
+     * @return $this
      */
     protected function _loadWebsiteCollection()
     {
@@ -89,7 +89,7 @@ class Mage_Adminhtml_Model_System_Store extends Varien_Object
     /**
      * Load/Reload Group collection
      *
-     * @return array
+     * @return $this
      */
     protected function _loadGroupCollection()
     {
@@ -105,7 +105,7 @@ class Mage_Adminhtml_Model_System_Store extends Varien_Object
     /**
      * Load/Reload Store collection
      *
-     * @return array
+     * @return $this
      */
     protected function _loadStoreCollection()
     {
@@ -443,7 +443,7 @@ class Mage_Adminhtml_Model_System_Store extends Varien_Object
      * Allowed types: website, group, store or null for all
      *
      * @param string $type
-     * @return Mage_Adminhtml_Model_System_Store
+     * @return $this
      */
     public function reload($type = null)
     {
@@ -500,7 +500,7 @@ class Mage_Adminhtml_Model_System_Store extends Varien_Object
      * Specify whether to show admin-scope options
      *
      * @param bool $value
-     * @return Mage_Adminhtml_Model_System_Store
+     * @return $this
      */
     public function setIsAdminScopeAllowed($value)
     {

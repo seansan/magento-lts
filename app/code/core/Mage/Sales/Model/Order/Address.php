@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -89,7 +89,7 @@ class Mage_Sales_Model_Order_Address extends Mage_Customer_Model_Address_Abstrac
     /**
      * Init mapping array of short fields to its full names
      *
-     * @return Mage_Sales_Model_Order_Address
+     * @return $this
      */
     protected function _initOldFieldsMap()
     {
@@ -100,7 +100,7 @@ class Mage_Sales_Model_Order_Address extends Mage_Customer_Model_Address_Abstrac
     /**
      * Set order
      *
-     * @return Mage_Sales_Model_Order_Address
+     * @return $this
      */
     public function setOrder(Mage_Sales_Model_Order $order)
     {
@@ -124,7 +124,7 @@ class Mage_Sales_Model_Order_Address extends Mage_Customer_Model_Address_Abstrac
     /**
      * Before object save manipulations
      *
-     * @return Mage_Sales_Model_Order_Address
+     * @return $this
      */
     protected function _beforeSave()
     {

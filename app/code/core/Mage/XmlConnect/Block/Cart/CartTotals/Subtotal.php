@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -88,7 +88,7 @@ class Mage_Xmlconnect_Block_Cart_CartTotals_Subtotal extends Mage_Tax_Block_Chec
      * Set total id prefix
      *
      * @param string $totalIdPrefix
-     * @return Mage_Xmlconnect_Block_Cart_CartTotals_Subtotal
+     * @return $this
      */
     public function setTotalIdPrefix($totalIdPrefix)
     {

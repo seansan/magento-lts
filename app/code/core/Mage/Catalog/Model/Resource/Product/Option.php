@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -61,7 +61,7 @@ class Mage_Catalog_Model_Resource_Product_Option extends Mage_Core_Model_Resourc
      * Save value prices
      *
      * @param Mage_Core_Model_Abstract $object
-     * @return Mage_Catalog_Model_Resource_Product_Option
+     * @return $this
      */
     protected function _saveValuePrices(Mage_Core_Model_Abstract $object)
     {
@@ -204,7 +204,7 @@ class Mage_Catalog_Model_Resource_Product_Option extends Mage_Core_Model_Resourc
      * Save titles
      *
      * @param Mage_Core_Model_Abstract $object
-     * @return Mage_Catalog_Model_Resource_Product_Option
+     * @return $this
      */
     protected function _saveValueTitles(Mage_Core_Model_Abstract $object)
     {
@@ -307,7 +307,7 @@ class Mage_Catalog_Model_Resource_Product_Option extends Mage_Core_Model_Resourc
      * Delete prices
      *
      * @param int $optionId
-     * @return Mage_Catalog_Model_Resource_Product_Option
+     * @return $this
      */
     public function deletePrices($optionId)
     {
@@ -325,7 +325,7 @@ class Mage_Catalog_Model_Resource_Product_Option extends Mage_Core_Model_Resourc
      * Delete titles
      *
      * @param int $optionId
-     * @return Mage_Catalog_Model_Resource_Product_Option
+     * @return $this
      */
     public function deleteTitles($optionId)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Directory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -66,7 +66,7 @@ class Mage_Directory_Model_Resource_Region_Collection extends Mage_Core_Model_Re
     /**
      * Initialize select object
      *
-     * @return Mage_Directory_Model_Resource_Region_Collection
+     * @return $this
      */
     protected function _initSelect()
     {
@@ -86,7 +86,7 @@ class Mage_Directory_Model_Resource_Region_Collection extends Mage_Core_Model_Re
      * Filter by country_id
      *
      * @param string|array $countryId
-     * @return Mage_Directory_Model_Resource_Region_Collection
+     * @return $this
      */
     public function addCountryFilter($countryId)
     {
@@ -104,7 +104,7 @@ class Mage_Directory_Model_Resource_Region_Collection extends Mage_Core_Model_Re
      * Filter by country code (ISO 3)
      *
      * @param string $countryCode
-     * @return Mage_Directory_Model_Resource_Region_Collection
+     * @return $this
      */
     public function addCountryCodeFilter($countryCode)
     {
@@ -122,7 +122,7 @@ class Mage_Directory_Model_Resource_Region_Collection extends Mage_Core_Model_Re
      * Filter by Region code
      *
      * @param string|array $regionCode
-     * @return Mage_Directory_Model_Resource_Region_Collection
+     * @return $this
      */
     public function addRegionCodeFilter($regionCode)
     {
@@ -140,7 +140,7 @@ class Mage_Directory_Model_Resource_Region_Collection extends Mage_Core_Model_Re
      * Filter by region name
      *
      * @param string|array $regionName
-     * @return Mage_Directory_Model_Resource_Region_Collection
+     * @return $this
      */
     public function addRegionNameFilter($regionName)
     {
@@ -158,7 +158,7 @@ class Mage_Directory_Model_Resource_Region_Collection extends Mage_Core_Model_Re
      * Filter region by its code or name
      *
      * @param string|array $region
-     * @return Mage_Directory_Model_Resource_Region_Collection
+     * @return $this
      */
     public function addRegionCodeOrNameFilter($region)
     {

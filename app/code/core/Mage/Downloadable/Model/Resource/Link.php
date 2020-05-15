@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Downloadable
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,7 +47,7 @@ class Mage_Downloadable_Model_Resource_Link extends Mage_Core_Model_Resource_Db_
      * Save title and price of link item
      *
      * @param Mage_Downloadable_Model_Link $linkObject
-     * @return Mage_Downloadable_Model_Resource_Link
+     * @return $this
      */
     public function saveItemTitleAndPrice($linkObject)
     {
@@ -154,7 +154,7 @@ class Mage_Downloadable_Model_Resource_Link extends Mage_Core_Model_Resource_Db_
      * Delete data by item(s)
      *
      * @param Mage_Downloadable_Model_Link|array|int $items
-     * @return Mage_Downloadable_Model_Resource_Link
+     * @return $this
      */
     public function deleteItems($items)
     {

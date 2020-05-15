@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -90,7 +90,7 @@ class Mage_XmlConnect_Model_Configuration extends Mage_Core_Model_Abstract
      * Save is active admin application param
      *
      * @param int $isActive
-     * @return Mage_XmlConnect_Model_Configuration
+     * @return $this
      */
     public function saveIsActiveAdminApp($isActive)
     {
@@ -181,7 +181,7 @@ class Mage_XmlConnect_Model_Configuration extends Mage_Core_Model_Abstract
      * Save localization hash in configuration storage
      *
      * @param string $hash
-     * @return Mage_XmlConnect_Model_Configuration
+     * @return $this
      */
     public function setPreviousLocalizationHash($hash)
     {
@@ -261,7 +261,7 @@ class Mage_XmlConnect_Model_Configuration extends Mage_Core_Model_Abstract
     /**
      * Set application model
      *
-     * @return Mage_XmlConnect_Model_Configuration
+     * @return $this
      */
     public function setApplicationModel()
     {

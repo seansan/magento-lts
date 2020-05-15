@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Customer
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -71,8 +71,14 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
 
     /**
      * Minimum Password Length
+     * @deprecated Use getMinPasswordLength() method instead
      */
-    const MINIMUM_PASSWORD_LENGTH = 6;
+    const MINIMUM_PASSWORD_LENGTH = Mage_Core_Model_App::ABSOLUTE_MIN_PASSWORD_LENGTH;
+
+    /**
+     * Configuration path for minimum length of password
+     */
+    const XML_PATH_MIN_PASSWORD_LENGTH = 'customer/password/min_password_length';
 
     /**
      * Maximum Password Length
@@ -153,7 +159,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Initialize customer model
      */
-    function _construct()
+    public function _construct()
     {
         $this->_init('customer/customer');
     }
@@ -214,7 +220,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Processing object before save data
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -378,7 +384,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Set plain and hashed password
      *
      * @param string $password
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function setPassword($password)
     {
@@ -398,7 +404,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     public function hashPassword($password, $salt = null)
     {
         return $this->_getHelper('core')
-            ->getHash(trim($password), !is_null($salt) ? $salt : Mage_Admin_Model_User::HASH_SALT_LENGTH);
+            ->getHash(trim($password), (bool) $salt ? $salt : Mage_Admin_Model_User::HASH_SALT_LENGTH);
     }
 
     /**
@@ -420,6 +426,10 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      */
     public function generatePassword($length = 8)
     {
+        $minPasswordLength = $this->getMinPasswordLength();
+        if ($minPasswordLength > $length) {
+            $length = $minPasswordLength;
+        }
         $chars = Mage_Core_Helper_Data::CHARS_PASSWORD_LOWERS
             . Mage_Core_Helper_Data::CHARS_PASSWORD_UPPERS
             . Mage_Core_Helper_Data::CHARS_PASSWORD_DIGITS
@@ -600,7 +610,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * @param string $storeId
      * @param string $password
      * @throws Mage_Core_Exception
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function sendNewAccountEmail($type = 'registered', $backUrl = '', $storeId = '0', $password = null)
     {
@@ -659,7 +669,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Send email with new customer password
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function sendPasswordReminderEmail()
     {
@@ -677,7 +687,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Send info email about changed password or email
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function sendChangedPasswordOrEmail()
     {
@@ -696,12 +706,12 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Send corresponding email template
      *
-     * @param string $emailTemplate configuration path of email template
-     * @param string $emailSender configuration path of email identity
+     * @param string $template configuration path of email template
+     * @param string $sender configuration path of email identity
      * @param array $templateParams
      * @param int|null $storeId
      * @param string|null $customerEmail
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     protected function _sendEmailTemplate($template, $sender, $templateParams = array(), $storeId = null, $customerEmail = null)
     {
@@ -724,7 +734,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Send email with reset password confirmation link
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function sendPasswordResetConfirmationEmail()
     {
@@ -844,7 +854,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Set store to customer
      *
      * @param Mage_Core_Model_Store $store
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function setStore(Mage_Core_Model_Store $store)
     {
@@ -878,9 +888,10 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
         if (!$this->getId() && !Zend_Validate::is($password , 'NotEmpty')) {
             $errors[] = Mage::helper('customer')->__('The password cannot be empty.');
         }
-        if (strlen($password) && !Zend_Validate::is($password, 'StringLength', array(self::MINIMUM_PASSWORD_LENGTH))) {
+        $minPasswordLength = $this->getMinPasswordLength();
+        if (strlen($password) && !Zend_Validate::is($password, 'StringLength', array($minPasswordLength))) {
             $errors[] = Mage::helper('customer')
-                ->__('The minimum password length is %s', self::MINIMUM_PASSWORD_LENGTH);
+                ->__('The minimum password length is %s', $minPasswordLength);
         }
         if (strlen($password) && !Zend_Validate::is($password, 'StringLength', array('max' => self::MAXIMUM_PASSWORD_LENGTH))) {
             $errors[] = Mage::helper('customer')
@@ -922,9 +933,10 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
         if (!Zend_Validate::is($password, 'NotEmpty')) {
             $errors[] = Mage::helper('customer')->__('The password cannot be empty.');
         }
-        if (!Zend_Validate::is($password, 'StringLength', array(self::MINIMUM_PASSWORD_LENGTH))) {
+        $minPasswordLength = $this->getMinPasswordLength();
+        if (!Zend_Validate::is($password, 'StringLength', array($minPasswordLength))) {
             $errors[] = Mage::helper('customer')
-                ->__('The minimum password length is %s', self::MINIMUM_PASSWORD_LENGTH);
+                ->__('The minimum password length is %s', $minPasswordLength);
         }
         if (!Zend_Validate::is($password, 'StringLength', array('max' => self::MAXIMUM_PASSWORD_LENGTH))) {
             $errors[] = Mage::helper('customer')
@@ -945,7 +957,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Import customer data from text array
      *
      * @param array $row
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function importFromTextArray(array $row)
     {
@@ -1112,9 +1124,9 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Unset subscription
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
-    function unsetSubscription()
+    public function unsetSubscription()
     {
         if (isset($this->_isSubscribed)) {
             unset($this->_isSubscribed);
@@ -1125,9 +1137,8 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Clean all addresses
      *
-     * @return Mage_Customer_Model_Customer
      */
-    function cleanAllAddresses() {
+    public function cleanAllAddresses() {
         $this->_addressesCollection = null;
         $this->_addresses           = null;
     }
@@ -1135,9 +1146,9 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Add error
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
-    function addError($error)
+    public function addError($error)
     {
         $this->_errors[] = $error;
         return $this;
@@ -1148,7 +1159,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      *
      * @return array
      */
-    function getErrors()
+    public function getErrors()
     {
         return $this->_errors;
     }
@@ -1156,9 +1167,9 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Reset errors array
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
-    function resetErrors()
+    public function resetErrors()
     {
         $this->_errors = array();
         return $this;
@@ -1171,7 +1182,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * @param $line
      * @return boolean
      */
-    function printError($error, $line = null)
+    public function printError($error, $line = null)
     {
         if ($error == null) {
             return false;
@@ -1194,7 +1205,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * @param string $type
      * @return bool
      */
-    function validateAddress(array $data, $type = 'billing')
+    public function validateAddress(array $data, $type = 'billing')
     {
         $fields = array('city', 'country', 'postcode', 'telephone', 'street1');
         $usca   = array('US', 'CA');
@@ -1252,7 +1263,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Reset all model data
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function reset()
     {
@@ -1277,7 +1288,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Set is deleteable flag
      *
      * @param boolean $value
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function setIsDeleteable($value)
     {
@@ -1299,7 +1310,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Set is readonly flag
      *
      * @param boolean $value
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function setIsReadonly($value)
     {
@@ -1380,7 +1391,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Stores new reset password link token
      *
      * @param string $newResetPasswordLinkToken
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function changeResetPasswordLinkToken($newResetPasswordLinkToken) {
         if (!is_string($newResetPasswordLinkToken) || empty($newResetPasswordLinkToken)) {
@@ -1397,7 +1408,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
      * Stores new reset password link customer Id
      *
      * @param string $newResetPasswordLinkCustomerId
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      * @throws Mage_Core_Exception
      */
     public function changeResetPasswordLinkCustomerId($newResetPasswordLinkCustomerId)
@@ -1447,12 +1458,24 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
     /**
      * Clean password's validation data (password, password_confirmation)
      *
-     * @return Mage_Customer_Model_Customer
+     * @return $this
      */
     public function cleanPasswordsValidationData()
     {
         $this->setData('password', null);
         $this->setData('password_confirmation', null);
         return $this;
+    }
+
+    /**
+     * Retrieve minimum length of password
+     *
+     * @return int
+     */
+    public function getMinPasswordLength()
+    {
+        $minLength = (int)Mage::getStoreConfig(self::XML_PATH_MIN_PASSWORD_LENGTH);
+        $absoluteMinLength = Mage_Core_Model_App::ABSOLUTE_MIN_PASSWORD_LENGTH;
+        return ($minLength < $absoluteMinLength) ? $absoluteMinLength : $minLength;
     }
 }

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -61,7 +61,7 @@ class Mage_Catalog_Model_Product_Visibility extends Varien_Object
      *
      * @deprecated
      * @param Mage_Eav_Model_Entity_Collection_Abstract $collection
-     * @return Mage_Catalog_Model_Product_Visibility
+     * @return $this
      */
     public function addVisibleInCatalogFilterToCollection(Mage_Eav_Model_Entity_Collection_Abstract $collection)
     {
@@ -75,7 +75,7 @@ class Mage_Catalog_Model_Product_Visibility extends Varien_Object
      *
      * @deprecated
      * @param Mage_Eav_Model_Entity_Collection_Abstract $collection
-     * @return Mage_Catalog_Model_Product_Visibility
+     * @return $this
      */
     public function addVisibleInSearchFilterToCollection(Mage_Eav_Model_Entity_Collection_Abstract $collection)
     {
@@ -89,7 +89,7 @@ class Mage_Catalog_Model_Product_Visibility extends Varien_Object
      *
      * @deprecated
      * @param Mage_Eav_Model_Entity_Collection_Abstract $collection
-     * @return Mage_Catalog_Model_Product_Visibility
+     * @return $this
      */
     public function addVisibleInSiteFilterToCollection(Mage_Eav_Model_Entity_Collection_Abstract $collection)
     {

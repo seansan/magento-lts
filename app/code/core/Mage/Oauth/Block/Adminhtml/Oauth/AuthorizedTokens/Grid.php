@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Oauth
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -49,7 +49,7 @@ class Mage_Oauth_Block_Adminhtml_Oauth_AuthorizedTokens_Grid extends Mage_Adminh
     /**
      * Prepare collection
      *
-     * @return Mage_Oauth_Block_Adminhtml_Oauth_AuthorizedTokens_Grid
+     * @return $this
      */
     protected function _prepareCollection()
     {
@@ -66,7 +66,7 @@ class Mage_Oauth_Block_Adminhtml_Oauth_AuthorizedTokens_Grid extends Mage_Adminh
     /**
      * Prepare columns
      *
-     * @return Mage_Oauth_Block_Adminhtml_Oauth_AuthorizedTokens_Grid
+     * @return $this
      */
     protected function _prepareColumns()
     {
@@ -147,7 +147,7 @@ class Mage_Oauth_Block_Adminhtml_Oauth_AuthorizedTokens_Grid extends Mage_Adminh
     /**
      * Add mass-actions to grid
      *
-     * @return Mage_Oauth_Block_Adminhtml_Oauth_AuthorizedTokens_Grid
+     * @return $this
      */
     protected function _prepareMassaction()
     {

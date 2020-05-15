@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -28,7 +28,6 @@
 /**
  * Eav Form Element Model
  *
- * @method Mage_Eav_Model_Resource_Form_Element _getResource()
  * @method Mage_Eav_Model_Resource_Form_Element getResource()
  * @method int getTypeId()
  * @method Mage_Eav_Model_Form_Element setTypeId(int $value)
@@ -85,7 +84,7 @@ class Mage_Eav_Model_Form_Element extends Mage_Core_Model_Abstract
      * Validate data before save data
      *
      * @throws Mage_Core_Exception
-     * @return Mage_Eav_Model_Form_Element
+     * @return $this
      */
     protected function _beforeSave()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -311,7 +311,7 @@ class Mage_Core_Model_Resource
      *
      * @param string $tableName
      * @param string $mappedName
-     * @return Mage_Core_Model_Resource
+     * @return $this
      */
     public function setMappedTableName($tableName, $mappedName)
     {
@@ -338,7 +338,7 @@ class Mage_Core_Model_Resource
      * Clean db row
      *
      * @param array $row
-     * @return Mage_Core_Model_Resource
+     * @return $this
      */
     public function cleanDbRow(&$row)
     {

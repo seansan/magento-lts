@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -412,7 +412,7 @@ class Mage_Catalog_Model_Category extends Mage_Catalog_Model_Abstract
      * Set store id
      *
      * @param integer $storeId
-     * @return Mage_Catalog_Model_Category
+     * @return $this
      */
     public function setStoreId($storeId)
     {
@@ -520,7 +520,7 @@ class Mage_Catalog_Model_Category extends Mage_Catalog_Model_Abstract
     /**
      * Get parent category object
      *
-     * @return Mage_Catalog_Model_Category
+     * @return $this
      */
     public function getParentCategory()
     {
@@ -748,7 +748,7 @@ class Mage_Catalog_Model_Category extends Mage_Catalog_Model_Abstract
     /**
      * Before delete process
      *
-     * @return Mage_Catalog_Model_Category
+     * @return $this
      */
     protected function _beforeDelete()
     {
@@ -831,7 +831,7 @@ class Mage_Catalog_Model_Category extends Mage_Catalog_Model_Abstract
     }
 
     /**
-     * Retuen children categories of current category
+     * Return children categories of current category
      *
      * @return array
      */
@@ -853,7 +853,7 @@ class Mage_Catalog_Model_Category extends Mage_Catalog_Model_Abstract
     /**
      * Return parent category of current category with own custom design settings
      *
-     * @return Mage_Catalog_Model_Category
+     * @return $this
      */
     public function getParentDesignCategory()
     {
@@ -945,7 +945,7 @@ class Mage_Catalog_Model_Category extends Mage_Catalog_Model_Abstract
     /**
      * Callback function which called after transaction commit in resource model
      *
-     * @return Mage_Catalog_Model_Category
+     * @return $this
      */
     public function afterCommitCallback()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -28,7 +28,6 @@
 /**
  * Product status functionality model
  *
- * @method Mage_Catalog_Model_Resource_Product_Status _getResource()
  * @method Mage_Catalog_Model_Resource_Product_Status getResource()
  * @method int getProductId()
  * @method Mage_Catalog_Model_Product_Status setProductId(int $value)
@@ -88,7 +87,7 @@ class Mage_Catalog_Model_Product_Status extends Mage_Core_Model_Abstract
      *
      * @deprecated remove on new builds
      * @param Mage_Eav_Model_Entity_Collection_Abstract $collection
-     * @return Mage_Catalog_Model_Product_Status
+     * @return $this
      */
     public function addVisibleFilterToCollection(Mage_Eav_Model_Entity_Collection_Abstract $collection)
     {
@@ -101,7 +100,7 @@ class Mage_Catalog_Model_Product_Status extends Mage_Core_Model_Abstract
      *
      * @deprecated remove on new builds
      * @param Mage_Eav_Model_Entity_Collection_Abstract $collection
-     * @return Mage_Catalog_Model_Product_Status
+     * @return $this
      */
     public function addSaleableFilterToCollection(Mage_Eav_Model_Entity_Collection_Abstract $collection)
     {

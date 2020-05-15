@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -164,7 +164,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      * Add value of option to values array
      *
      * @param Mage_Catalog_Model_Product_Option_Value $value
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function addValue(Mage_Catalog_Model_Product_Option_Value $value)
     {
@@ -214,7 +214,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      * Add option for save it
      *
      * @param array $option
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function addOption($option)
     {
@@ -236,7 +236,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      * Set options for array
      *
      * @param array $options
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function setOptions($options)
     {
@@ -247,7 +247,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
     /**
      * Set options to empty array
      *
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function unsetOptions()
     {
@@ -269,7 +269,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      * Set product instance
      *
      * @param Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function setProduct(Mage_Catalog_Model_Product $product = null)
     {
@@ -322,7 +322,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
     /**
      * Save options.
      *
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function saveOptions()
     {
@@ -415,7 +415,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      *  return converted percent to price
      *
      * @param bool $flag
-     * @return decimal
+     * @return float
      */
     public function getPrice($flag = false)
     {
@@ -431,7 +431,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      * Delete prices of option
      *
      * @param int $option_id
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function deletePrices($option_id)
     {
@@ -443,7 +443,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      * Delete titles of option
      *
      * @param int $option_id
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function deleteTitles($option_id)
     {
@@ -529,7 +529,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
      *
      * @param int $oldProductId
      * @param int $newProductId
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     public function duplicate($oldProductId, $newProductId)
     {
@@ -553,7 +553,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
     /**
      * Clearing object's data
      *
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     protected function _clearData()
     {
@@ -565,7 +565,7 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
     /**
      * Clearing cyclic references
      *
-     * @return Mage_Catalog_Model_Product_Option
+     * @return $this
      */
     protected function _clearReferences()
     {

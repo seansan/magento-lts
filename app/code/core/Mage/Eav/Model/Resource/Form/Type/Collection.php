@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -57,7 +57,7 @@ class Mage_Eav_Model_Resource_Form_Type_Collection extends Mage_Core_Model_Resou
      * Add Entity type filter to collection
      *
      * @param Mage_Eav_Model_Entity_Type|int $entity
-     * @return Mage_Eav_Model_Resource_Form_Type_Collection
+     * @return $this
      */
     public function addEntityTypeFilter($entity)
     {

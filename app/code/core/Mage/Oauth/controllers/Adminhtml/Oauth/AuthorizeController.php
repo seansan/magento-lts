@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Oauth
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -103,7 +103,7 @@ class Mage_Oauth_Adminhtml_Oauth_AuthorizeController extends Mage_Adminhtml_Cont
      * Init authorize page
      *
      * @param bool $simple
-     * @return Mage_Oauth_Adminhtml_Oauth_AuthorizeController
+     * @return $this
      */
     protected function _initForm($simple = false)
     {
@@ -150,7 +150,7 @@ class Mage_Oauth_Adminhtml_Oauth_AuthorizeController extends Mage_Adminhtml_Cont
      * Init confirm page
      *
      * @param bool $simple
-     * @return Mage_Oauth_Adminhtml_Oauth_AuthorizeController
+     * @return $this
      */
     protected function _initConfirmPage($simple = false)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -71,7 +71,7 @@ class Mage_Sales_Model_Order_Pdf_Shipment_Packaging extends Mage_Sales_Model_Ord
      * Draw header block
      *
      * @param  Zend_Pdf_Page $page
-     * @return Mage_Sales_Model_Order_Pdf_Shipment_Packaging
+     * @return $this
      */
     protected function _drawHeaderBlock(Zend_Pdf_Page $page) {
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0.5));
@@ -89,7 +89,7 @@ class Mage_Sales_Model_Order_Pdf_Shipment_Packaging extends Mage_Sales_Model_Ord
      * Draw packages block
      *
      * @param  Zend_Pdf_Page $page
-     * @return Mage_Sales_Model_Order_Pdf_Shipment_Packaging
+     * @return $this
      */
     protected function _drawPackageBlock(Zend_Pdf_Page $page)
     {

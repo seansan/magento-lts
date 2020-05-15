@@ -20,10 +20,9 @@
  *
  * @category    Mage
  * @package     Mage_Cms
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-
 
 /**
  * CMS page collection
@@ -40,7 +39,6 @@ class Mage_Cms_Model_Resource_Page_Collection extends Mage_Core_Model_Resource_D
      * @var bool
      */
     protected $_previewFlag;
-
 
     /**
      * Define resource model
@@ -95,7 +93,7 @@ class Mage_Cms_Model_Resource_Page_Collection extends Mage_Core_Model_Resource_D
      * Set first store flag
      *
      * @param bool $flag
-     * @return Mage_Cms_Model_Resource_Page_Collection
+     * @return $this
      */
     public function setFirstStoreFlag($flag = false)
     {
@@ -104,9 +102,7 @@ class Mage_Cms_Model_Resource_Page_Collection extends Mage_Core_Model_Resource_D
     }
 
     /**
-     * Perform operations after collection load
-     *
-     * @return Mage_Cms_Model_Resource_Page_Collection
+     * @inheritDoc
      */
     protected function _afterLoad()
     {
@@ -146,7 +142,7 @@ class Mage_Cms_Model_Resource_Page_Collection extends Mage_Core_Model_Resource_D
      *
      * @param int|Mage_Core_Model_Store $store
      * @param bool $withAdmin
-     * @return Mage_Cms_Model_Resource_Page_Collection
+     * @return $this
      */
     public function addStoreFilter($store, $withAdmin = true)
     {
@@ -187,7 +183,6 @@ class Mage_Cms_Model_Resource_Page_Collection extends Mage_Core_Model_Resource_D
         }
         return parent::_renderFiltersBefore();
     }
-
 
     /**
      * Get SQL for get record count.

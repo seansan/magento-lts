@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -337,7 +337,7 @@ class Mage_Catalog_Model_Layer_Filter_Price extends Mage_Catalog_Model_Layer_Fil
     /**
      * Apply price range filter to collection
      *
-     * @return Mage_Catalog_Model_Layer_Filter_Price
+     * @return $this
      */
     protected function _applyPriceRange()
     {
@@ -372,7 +372,7 @@ class Mage_Catalog_Model_Layer_Filter_Price extends Mage_Catalog_Model_Layer_Fil
      * @param Zend_Controller_Request_Abstract $request
      * @param $filterBlock
      *
-     * @return Mage_Catalog_Model_Layer_Filter_Price
+     * @return $this
      */
     public function apply(Zend_Controller_Request_Abstract $request, $filterBlock)
     {
@@ -425,7 +425,7 @@ class Mage_Catalog_Model_Layer_Filter_Price extends Mage_Catalog_Model_Layer_Fil
      * @deprecated since 1.7.0.0
      * @param int $range
      * @param int $index
-     * @return Mage_Catalog_Model_Layer_Filter_Price
+     * @return $this
      */
     protected function _applyToCollection($range, $index)
     {
@@ -451,7 +451,7 @@ class Mage_Catalog_Model_Layer_Filter_Price extends Mage_Catalog_Model_Layer_Fil
      * Set active customer group id for filter
      *
      * @param int $customerGroupId
-     * @return Mage_Catalog_Model_Layer_Filter_Price
+     * @return $this
      */
     public function setCustomerGroupId($customerGroupId)
     {
@@ -479,7 +479,7 @@ class Mage_Catalog_Model_Layer_Filter_Price extends Mage_Catalog_Model_Layer_Fil
      * Set active currency rate for filter
      *
      * @param float $rate
-     * @return Mage_Catalog_Model_Layer_Filter_Price
+     * @return $this
      */
     public function setCurrencyRate($rate)
     {

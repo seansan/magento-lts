@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -241,7 +241,7 @@ class Mage_XmlConnect_Block_Catalog_Product_Options extends Mage_XmlConnect_Bloc
      * @param Mage_XmlConnect_Model_Simplexml_Element $xmlItem
      * @param string $type
      * @param int|null $value
-     * @return Mage_XmlConnect_Block_Catalog_Product_Options
+     * @return $this
      */
     protected function _setCartSelectedValue($xmlItem, $type, $value = null)
     {

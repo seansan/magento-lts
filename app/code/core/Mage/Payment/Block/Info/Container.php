@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Payment
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -36,7 +36,7 @@ class Mage_Payment_Block_Info_Container extends Mage_Core_Block_Template
     /**
      * Add payment info block to layout
      *
-     * @return Mage_Payment_Block_Info_Container
+     * @return $this
      */
     protected function _prepareLayout()
     {

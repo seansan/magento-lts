@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogInventory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,7 +47,7 @@ class Mage_CatalogInventory_Model_Resource_Stock_Item_Collection extends Mage_Co
      * Add stock filter to collection
      *
      * @param mixed $stock
-     * @return Mage_CatalogInventory_Model_Resource_Stock_Item_Collection
+     * @return $this
      */
     public function addStockFilter($stock)
     {
@@ -63,7 +63,7 @@ class Mage_CatalogInventory_Model_Resource_Stock_Item_Collection extends Mage_Co
      * Add product filter to collection
      *
      * @param array $products
-     * @return Mage_CatalogInventory_Model_Resource_Stock_Item_Collection
+     * @return $this
      */
     public function addProductsFilter($products)
     {
@@ -87,7 +87,7 @@ class Mage_CatalogInventory_Model_Resource_Stock_Item_Collection extends Mage_Co
      * Join Stock Status to collection
      *
      * @param int $storeId
-     * @return Mage_CatalogInventory_Model_Resource_Stock_Item_Collection
+     * @return $this
      */
     public function joinStockStatus($storeId = null)
     {
@@ -107,7 +107,7 @@ class Mage_CatalogInventory_Model_Resource_Stock_Item_Collection extends Mage_Co
      * Add Managed Stock products filter to collection
      *
      * @param boolean $isStockManagedInConfig
-     * @return Mage_CatalogInventory_Model_Resource_Stock_Item_Collection
+     * @return $this
      */
     public function addManagedFilter($isStockManagedInConfig)
     {
@@ -125,7 +125,7 @@ class Mage_CatalogInventory_Model_Resource_Stock_Item_Collection extends Mage_Co
      *
      * @param string $comparsionMethod
      * @param float $qty
-     * @return Mage_CatalogInventory_Model_Resource_Stock_Item_Collection
+     * @return $this
      */
     public function addQtyFilter($comparsionMethod, $qty)
     {
@@ -149,7 +149,7 @@ class Mage_CatalogInventory_Model_Resource_Stock_Item_Collection extends Mage_Co
     /**
      * Initialize select object
      *
-     * @return Mage_CatalogInventory_Model_Resource_Stock_Item_Collection
+     * @return $this
      */
     protected function _initSelect()
     {

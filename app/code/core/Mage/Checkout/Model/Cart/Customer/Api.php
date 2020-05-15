@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Checkout
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -146,10 +146,12 @@ class Mage_Checkout_Model_Cart_Customer_Api extends Mage_Checkout_Model_Api_Reso
                 $this->_fault('customer_address_invalid', implode(PHP_EOL, $validateRes));
             }
 
+            if (!$address->getEmail() && $quote->getCustomerEmail()) {
+                $address->setEmail($quote->getCustomerEmail());
+            }
+
             switch($addressMode) {
             case self::ADDRESS_BILLING:
-                $address->setEmail($quote->getCustomer()->getEmail());
-
                 if (!$quote->isVirtual()) {
                     $usingCase = isset($addressItem['use_for_shipping']) ? (int)$addressItem['use_for_shipping'] : 0;
                     switch($usingCase) {

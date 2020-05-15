@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -322,7 +322,7 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
      * @param string|array $key
      * @param mixed $value
      *
-     * @return Mage_Core_Controller_Request_Http
+     * @return $this
      */
     public function setPost($key, $value = null)
     {
@@ -474,7 +474,7 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
      * Set routing info data
      *
      * @param array $data
-     * @return Mage_Core_Controller_Request_Http
+     * @return $this
      */
     public function setRoutingInfo($data)
     {
@@ -557,7 +557,7 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
      * Define that request was forwarded internally
      *
      * @param boolean $flag
-     * @return Mage_Core_Controller_Request_Http
+     * @return $this
      */
     public function setInternallyForwarded($flag = true)
     {

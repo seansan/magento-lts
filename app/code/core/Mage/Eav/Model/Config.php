@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -104,7 +104,7 @@ class Mage_Eav_Model_Config
      * Reset object state
      *
      * @deprecated
-     * @return Mage_Eav_Model_Config
+     * @return $this
      */
     public function clear()
     {
@@ -233,7 +233,7 @@ class Mage_Eav_Model_Config
     /**
      * Initialize all entity types data
      *
-     * @return Mage_Eav_Model_Config
+     * @return $this
      */
     protected function _initEntityTypes()
     {
@@ -691,7 +691,7 @@ class Mage_Eav_Model_Config
      *
      * @param string|Mage_Eav_Model_Entity_Type $entityType
      * @param array $attributes
-     * @return Mage_Eav_Model_Config
+     * @return $this
      */
     public function importAttributesData($entityType, array $attributes)
     {

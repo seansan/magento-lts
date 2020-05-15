@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -36,7 +36,7 @@ class Mage_XmlConnect_Block_Checkout_Onepage_Address_List extends Mage_Checkout_
     /**
      * Render customer address list xml
      *
-     * @return Mage_XmlConnect_Block_Checkout_Onepage_Address_List
+     * @return $this
      */
     protected function _toHtml()
     {
@@ -66,7 +66,7 @@ class Mage_XmlConnect_Block_Checkout_Onepage_Address_List extends Mage_Checkout_
      *
      * @param Mage_Customer_Model_Address $address
      * @param Mage_XmlConnect_Model_Simplexml_Element $item
-     * @return Mage_XmlConnect_Block_Checkout_Onepage_Address_List
+     * @return $this
      */
     protected function _prepareAddressData(
         Mage_Customer_Model_Address $address, Mage_XmlConnect_Model_Simplexml_Element $item

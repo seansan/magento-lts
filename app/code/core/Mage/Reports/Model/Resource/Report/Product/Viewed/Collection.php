@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Reports
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -118,7 +118,7 @@ class Mage_Reports_Model_Resource_Report_Product_Viewed_Collection
     /**
      * Init collection select
      *
-     * @return Mage_Reports_Model_Resource_Report_Product_Viewed_Collection
+     * @return $this
      */
     protected function _initSelect()
     {
@@ -183,7 +183,7 @@ class Mage_Reports_Model_Resource_Report_Product_Viewed_Collection
      * Set ids for store restrictions
      *
      * @param  array $storeIds
-     * @return Mage_Reports_Model_Resource_Report_Product_Viewed_Collection
+     * @return $this
      */
     public function addStoreRestrictions($storeIds)
     {
@@ -208,7 +208,7 @@ class Mage_Reports_Model_Resource_Report_Product_Viewed_Collection
      * Redeclare parent method for applying filters after parent method
      * but before adding unions and calculating totals
      *
-     * @return Mage_Reports_Model_Resource_Report_Product_Viewed_Collection
+     * @return $this
      */
     protected function _beforeLoad()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Customer
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -149,7 +149,7 @@ class Mage_Customer_Block_Form_Register extends Mage_Directory_Block_Data
      * Entity and form code must be defined for the form
      *
      * @param Mage_Customer_Model_Form $form
-     * @return Mage_Customer_Block_Form_Register
+     * @return $this
      */
     public function restoreSessionData(Mage_Customer_Model_Form $form, $scope = null)
     {
@@ -160,5 +160,15 @@ class Mage_Customer_Block_Form_Register extends Mage_Directory_Block_Data
         }
 
         return $this;
+    }
+
+    /**
+     * Retrieve minimum length of customer password
+     *
+     * @return int
+     */
+    public function getMinPasswordLength()
+    {
+        return Mage::getModel('customer/customer')->getMinPasswordLength();
     }
 }

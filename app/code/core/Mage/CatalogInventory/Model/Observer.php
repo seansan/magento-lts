@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogInventory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -200,7 +200,7 @@ class Mage_CatalogInventory_Model_Observer
      *
      * @param Mage_CatalogInventory_Model_Stock_Item $item
      * @param Mage_Catalog_Model_Product $product
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     protected function _prepareItemForSave($item, $product)
     {
@@ -249,7 +249,7 @@ class Mage_CatalogInventory_Model_Observer
      *
      * @param Mage_Sales_Model_Quote_Item $item
      * @param int $code
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     protected function _removeErrorsFromQuoteAndItem($item, $code)
     {
@@ -298,7 +298,7 @@ class Mage_CatalogInventory_Model_Observer
      * Check product inventory data when quote item quantity declaring
      *
      * @param  Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function checkQuoteItemQty($observer)
     {
@@ -599,7 +599,7 @@ class Mage_CatalogInventory_Model_Observer
      * Subtract qtys of quote item products after multishipping checkout
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function checkoutAllSubmitAfter(Varien_Event_Observer $observer)
     {
@@ -846,7 +846,7 @@ class Mage_CatalogInventory_Model_Observer
      * Update Only product status observer
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function productStatusUpdate(Varien_Event_Observer $observer)
     {
@@ -860,7 +860,7 @@ class Mage_CatalogInventory_Model_Observer
      * Catalog Product website update
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function catalogProductWebsiteUpdate(Varien_Event_Observer $observer)
     {
@@ -881,7 +881,7 @@ class Mage_CatalogInventory_Model_Observer
      * Add stock status to prepare index select
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function addStockStatusToPrepareIndexSelect(Varien_Event_Observer $observer)
     {
@@ -898,7 +898,7 @@ class Mage_CatalogInventory_Model_Observer
      * Add stock status limitation to catalog product price index select object
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function prepareCatalogProductIndexSelect(Varien_Event_Observer $observer)
     {
@@ -916,7 +916,7 @@ class Mage_CatalogInventory_Model_Observer
      * Add stock status filter to select
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function addStockStatusFilterToSelect(Varien_Event_Observer $observer)
     {
@@ -935,7 +935,7 @@ class Mage_CatalogInventory_Model_Observer
             $websiteField = new Zend_Db_Expr($websiteField);
         }
 
-        Mage::getResourseSingleton('cataloginventory/stock_status')
+        Mage::getResourceSingleton('cataloginventory/stock_status')
             ->prepareCatalogProductIndexSelect($select, $entityField, $websiteField);
 
         return $this;
@@ -1032,7 +1032,7 @@ class Mage_CatalogInventory_Model_Observer
      * Detects whether product status should be shown
      *
      * @param Varien_Event_Observer $observer
-     * @return Mage_CatalogInventory_Model_Observer
+     * @return $this
      */
     public function displayProductStatusInfo($observer)
     {

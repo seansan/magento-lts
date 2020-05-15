@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Persistent
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -44,7 +44,7 @@ class Mage_Persistent_IndexController extends Mage_Core_Controller_Front_Action
      * Set whether clear checkout session when logout
      *
      * @param bool $clear
-     * @return Mage_Persistent_IndexController
+     * @return $this
      */
     public function setClearCheckoutSession($clear = true)
     {
@@ -77,7 +77,7 @@ class Mage_Persistent_IndexController extends Mage_Core_Controller_Front_Action
     /**
      * Revert all persistent data
      *
-     * @return Mage_Persistent_IndexController
+     * @return $this
      */
     protected function _cleanup()
     {

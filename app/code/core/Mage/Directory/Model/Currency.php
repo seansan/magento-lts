@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Directory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -101,7 +101,7 @@ class Mage_Directory_Model_Currency extends Mage_Core_Model_Abstract
      * Currency Rates setter
      *
      * @param array Currency Rates
-     * @return Mage_Directory_Model_Currency
+     * @return $this
      */
     public function setRates(array $rates)
     {
@@ -191,7 +191,7 @@ class Mage_Directory_Model_Currency extends Mage_Core_Model_Abstract
         }
 
         throw new Exception(Mage::helper('directory')->__('Undefined rate from "%s-%s".', $this->getCode(),
-            $toCurrency->getCode()));
+            $toCurrency instanceof Mage_Directory_Model_Currency ? $toCurrency->getCode() : $toCurrency));
     }
 
     /**

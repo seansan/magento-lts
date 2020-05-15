@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Newsletter
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -44,7 +44,7 @@ class Mage_Newsletter_Model_Observer
      * Customer delete handler
      *
      * @param Varien_Object $observer
-     * @return Mage_Newsletter_Model_Observer
+     * @return $this
      */
     public function customerDeleted($observer)
     {

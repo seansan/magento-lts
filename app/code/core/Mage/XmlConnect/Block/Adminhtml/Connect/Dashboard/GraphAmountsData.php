@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -60,7 +60,7 @@ class Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_GraphAmountsData
      * Add order chart data to xml object
      *
      * @param Mage_XmlConnect_Model_Simplexml_Element $xmlObj
-     * @return Mage_XmlConnect_Block_Adminhtml_Connect_Dashboard_GraphAmountsData
+     * @return $this
      */
     public function addAmountsChartDataToXmlObj(Mage_XmlConnect_Model_Simplexml_Element $xmlObj)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Review
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -49,7 +49,7 @@ class Mage_Review_Model_Resource_Review_Summary extends Mage_Core_Model_Resource
      * @param string $field
      * @param mixed $value
      * @param Mage_Core_Model_Abstract $object
-     * @return unknown
+     * @return Zend_Db_Select
      */
     protected function _getLoadSelect($field, $value, $object)
     {
@@ -62,7 +62,7 @@ class Mage_Review_Model_Resource_Review_Summary extends Mage_Core_Model_Resource
      * Reaggregate all data by rating summary
      *
      * @param array $summary
-     * @return Mage_Review_Model_Resource_Review_Summary
+     * @return $this
      */
     public function reAggregate($summary)
     {

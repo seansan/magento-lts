@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -113,7 +113,7 @@ class Mage_Catalog_Model_Product_Option_Type_File extends Mage_Catalog_Model_Pro
      *
      * @throws Mage_Core_Exception
      * @param array $values All product option values, i.e. array (option_id => mixed, option_id => mixed...)
-     * @return Mage_Catalog_Model_Product_Option_Type_File
+     * @return $this
      */
     public function validateUserValue($values)
     {
@@ -157,7 +157,7 @@ class Mage_Catalog_Model_Product_Option_Type_File extends Mage_Catalog_Model_Pro
      * Validate uploaded file
      *
      * @throws Mage_Core_Exception
-     * @return Mage_Catalog_Model_Product_Option_Type_File
+     * @return $this
      */
     protected function _validateUploadedFile()
     {
@@ -618,7 +618,7 @@ class Mage_Catalog_Model_Product_Option_Type_File extends Mage_Catalog_Model_Pro
     /**
      * Quote item to order item copy process
      *
-     * @return Mage_Catalog_Model_Product_Option_Type_File
+     * @return $this
      */
     public function copyQuoteToOrder()
     {
@@ -681,7 +681,7 @@ class Mage_Catalog_Model_Product_Option_Type_File extends Mage_Catalog_Model_Pro
      * Set url to custom option download controller
      *
      * @param string $url
-     * @return Mage_Catalog_Model_Product_Option_Type_File
+     * @return $this
      */
     public function setCustomOptionDownloadUrl($url)
     {

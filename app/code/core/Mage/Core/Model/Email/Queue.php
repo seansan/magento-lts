@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -77,7 +77,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
     /**
      * Save bind recipients to message
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     protected function _afterSave()
     {
@@ -88,7 +88,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
     /**
      * Validate recipients before saving
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -101,7 +101,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
     /**
      * Add message to queue
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     public function addMessageToQueue()
     {
@@ -125,7 +125,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
      * @param array|string|null $names
      * @param int $type
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     public function addRecipients($emails, $names = null, $type = self::EMAIL_TYPE_TO)
     {
@@ -147,7 +147,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
     /**
      * Clean recipients data from object
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     public function clearRecipients()
     {
@@ -160,7 +160,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
      *
      * @param array $recipients
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     public function setRecipients(array $recipients)
     {
@@ -181,7 +181,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
     /**
      * Send all messages in a queue
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     public function send()
     {
@@ -253,7 +253,7 @@ class Mage_Core_Model_Email_Queue extends Mage_Core_Model_Abstract
     /**
      * Clean queue from sent messages
      *
-     * @return Mage_Core_Model_Email_Queue
+     * @return $this
      */
     public function cleanQueue()
     {

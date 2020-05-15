@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -51,7 +51,7 @@ class Mage_Core_Block_Html_Select extends Mage_Core_Block_Abstract
      * Set options for the HTML select
      *
      * @param array $options
-     * @return Mage_Core_Block_Html_Select
+     * @return $this
      */
     public function setOptions($options)
     {
@@ -65,7 +65,7 @@ class Mage_Core_Block_Html_Select extends Mage_Core_Block_Abstract
      * @param string $value  HTML value
      * @param string $label  HTML label
      * @param array  $params HTML attributes
-     * @return Mage_Core_Block_Html_Select
+     * @return $this
      */
     public function addOption($value, $label, $params=array())
     {
@@ -77,7 +77,7 @@ class Mage_Core_Block_Html_Select extends Mage_Core_Block_Abstract
      * Set element's HTML ID
      *
      * @param string $id ID
-     * @return Mage_Core_Block_Html_Select
+     * @return $this
      */
     public function setId($id)
     {
@@ -89,7 +89,7 @@ class Mage_Core_Block_Html_Select extends Mage_Core_Block_Abstract
      * Set element's CSS class
      *
      * @param string $class Class
-     * @return Mage_Core_Block_Html_Select
+     * @return $this
      */
     public function setClass($class)
     {
@@ -101,7 +101,7 @@ class Mage_Core_Block_Html_Select extends Mage_Core_Block_Abstract
      * Set element's HTML title
      *
      * @param string $title Title
-     * @return Mage_Core_Block_Html_Select
+     * @return $this
      */
     public function setTitle($title)
     {

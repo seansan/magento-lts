@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -81,7 +81,7 @@ class Mage_Catalog_Model_Resource_Product_Status extends Mage_Core_Model_Resourc
      *
      * @param int $productId
      * @param int $storeId
-     * @return Mage_Catalog_Model_Resource_Product_Status
+     * @return $this
      */
     public function refreshEnabledIndex($productId, $storeId)
     {
@@ -104,7 +104,7 @@ class Mage_Catalog_Model_Resource_Product_Status extends Mage_Core_Model_Resourc
      * @param int $productId
      * @param int $storId
      * @param int $value
-     * @return Mage_Catalog_Model_Resource_Product_Status
+     * @return $this
      */
     public function updateProductStatus($productId, $storeId, $value)
     {

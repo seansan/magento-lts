@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -396,7 +396,7 @@ class Mage_Catalog_Model_Product_Type_Configurable extends Mage_Catalog_Model_Pr
      * Before save process
      *
      * @param  Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Product_Type_Configurable
+     * @return $this
      */
     public function beforeSave($product = null)
     {
@@ -428,7 +428,7 @@ class Mage_Catalog_Model_Product_Type_Configurable extends Mage_Catalog_Model_Pr
      * Save configurable product depended data
      *
      * @param  Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Product_Type_Configurable
+     * @return $this
      */
     public function save($product = null)
     {
@@ -671,7 +671,7 @@ class Mage_Catalog_Model_Product_Type_Configurable extends Mage_Catalog_Model_Pr
      * Check if product can be bought
      *
      * @param  Mage_Catalog_Model_Product $product
-     * @return Mage_Catalog_Model_Product_Type_Configurable
+     * @return $this
      * @throws Mage_Core_Exception
      */
     public function checkProductBuyState($product = null)
@@ -775,7 +775,7 @@ class Mage_Catalog_Model_Product_Type_Configurable extends Mage_Catalog_Model_Pr
      * weight or configurable product weight
      *
      * @param  Mage_Catalog_Model_Product $product
-     * @return decimal
+     * @return float
      */
     public function getWeight($product = null)
     {
@@ -798,7 +798,7 @@ class Mage_Catalog_Model_Product_Type_Configurable extends Mage_Catalog_Model_Pr
      * @param  Mage_Catalog_Model_Product|null $optionProduct
      * @param  Mage_Sales_Model_Quote_Item_Option $option
      * @param  Mage_Catalog_Model_Product|null $product
-     * @return Mage_Catalog_Model_Product_Type_Configurable
+     * @return $this
      */
     public function assignProductToOption($optionProduct, $option, $product = null)
     {

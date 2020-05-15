@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -71,7 +71,7 @@ class Mage_Sales_Model_Resource_Quote_Item_Collection extends Mage_Core_Model_Re
      * Set Quote object to Collection
      *
      * @param Mage_Sales_Model_Quote $quote
-     * @return Mage_Sales_Model_Resource_Quote_Item_Collection
+     * @return $this
      */
     public function setQuote($quote)
     {
@@ -92,7 +92,7 @@ class Mage_Sales_Model_Resource_Quote_Item_Collection extends Mage_Core_Model_Re
      *
      * @param string $quotesTableName
      * @param int $productId
-     * @return Mage_Sales_Model_Resource_Quote_Item_Collection
+     * @return $this
      */
     public function resetJoinQuotes($quotesTableName, $productId = null)
     {
@@ -114,7 +114,7 @@ class Mage_Sales_Model_Resource_Quote_Item_Collection extends Mage_Core_Model_Re
     /**
      * After load processing
      *
-     * @return Mage_Sales_Model_Resource_Quote_Item_Collection
+     * @return $this
      */
     protected function _afterLoad()
     {
@@ -145,7 +145,7 @@ class Mage_Sales_Model_Resource_Quote_Item_Collection extends Mage_Core_Model_Re
     /**
      * Add options to items
      *
-     * @return Mage_Sales_Model_Resource_Quote_Item_Collection
+     * @return $this
      */
     protected function _assignOptions()
     {
@@ -164,7 +164,7 @@ class Mage_Sales_Model_Resource_Quote_Item_Collection extends Mage_Core_Model_Re
     /**
      * Add products to items and item options
      *
-     * @return Mage_Sales_Model_Resource_Quote_Item_Collection
+     * @return $this
      */
     protected function _assignProducts()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -157,7 +157,7 @@ class Mage_Sales_Model_Resource_Order_Payment_Transaction extends Mage_Sales_Mod
      * @throws Mage_Core_Exception
      *
      * @param Mage_Sales_Model_Order_Payment_Transaction $transaction
-     * @return Mage_Sales_Model_Resource_Order_Payment_Transaction
+     * @return $this
      */
     protected function _beforeSave(Mage_Core_Model_Abstract $transaction)
     {

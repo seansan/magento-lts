@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogInventory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -28,7 +28,6 @@
 /**
  * CatalogInventory Stock Status Indexer Model
  *
- * @method Mage_CatalogInventory_Model_Resource_Indexer_Stock _getResource()
  * @method Mage_CatalogInventory_Model_Resource_Indexer_Stock getResource()
  * @method int getProductId()
  * @method Mage_CatalogInventory_Model_Indexer_Stock setProductId(int $value)
@@ -257,7 +256,7 @@ class Mage_CatalogInventory_Model_Indexer_Stock extends Mage_Index_Model_Indexer
      * Register data required by stock item save process in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_CatalogInventory_Model_Indexer_Stock
+     * @return $this
      */
     protected function _registerStockItemSaveEvent(Mage_Index_Model_Event $event)
     {
@@ -285,7 +284,7 @@ class Mage_CatalogInventory_Model_Indexer_Stock extends Mage_Index_Model_Indexer
      * Register data required by product delete process in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_CatalogInventory_Model_Indexer_Stock
+     * @return $this
      */
     protected function _registerCatalogProductDeleteEvent(Mage_Index_Model_Event $event)
     {
@@ -304,7 +303,7 @@ class Mage_CatalogInventory_Model_Indexer_Stock extends Mage_Index_Model_Indexer
      * Register data required by product mass action process in event object
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_CatalogInventory_Model_Indexer_Stock
+     * @return $this
      */
     protected function _registerCatalogProductMassActionEvent(Mage_Index_Model_Event $event)
     {

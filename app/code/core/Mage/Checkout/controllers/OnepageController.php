@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Checkout
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -52,7 +52,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
     /**
      * Predispatch: should set layout area
      *
-     * @return Mage_Checkout_OnepageController
+     * @return $this
      */
     public function preDispatch()
     {
@@ -80,7 +80,7 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
     /**
      * Send Ajax redirect response
      *
-     * @return Mage_Checkout_OnepageController
+     * @return $this
      */
     protected function _ajaxRedirectResponse()
     {

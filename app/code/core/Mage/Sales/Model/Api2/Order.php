@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,7 +47,7 @@ class Mage_Sales_Model_Api2_Order extends Mage_Api2_Model_Resource
      * Add gift message info to select
      *
      * @param Mage_Sales_Model_Resource_Order_Collection $collection
-     * @return Mage_Sales_Model_Api2_Order
+     * @return $this
      */
     protected function _addGiftMessageInfo(Mage_Sales_Model_Resource_Order_Collection $collection)
     {
@@ -68,7 +68,7 @@ class Mage_Sales_Model_Api2_Order extends Mage_Api2_Model_Resource
      * Add order payment method field to select
      *
      * @param Mage_Sales_Model_Resource_Order_Collection $collection
-     * @return Mage_Sales_Model_Api2_Order
+     * @return $this
      */
     protected function _addPaymentMethodInfo(Mage_Sales_Model_Resource_Order_Collection $collection)
     {
@@ -85,7 +85,7 @@ class Mage_Sales_Model_Api2_Order extends Mage_Api2_Model_Resource
      * Add order tax information to select
      *
      * @param Mage_Sales_Model_Resource_Order_Collection $collection
-     * @return Mage_Sales_Model_Api2_Order
+     * @return $this
      */
     protected function _addTaxInfo(Mage_Sales_Model_Resource_Order_Collection $collection)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Oauth
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -80,7 +80,7 @@ class Mage_Oauth_Block_Customer_Token_List extends Mage_Customer_Block_Account_D
     /**
      * Prepare layout
      *
-     * @return Mage_Oauth_Block_Customer_Token_List
+     * @return $this
      */
     protected function _prepareLayout()
     {

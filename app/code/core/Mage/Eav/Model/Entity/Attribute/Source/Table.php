@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -107,7 +107,7 @@ class Mage_Eav_Model_Entity_Attribute_Source_Table extends Mage_Eav_Model_Entity
      * @param Mage_Eav_Model_Entity_Collection_Abstract $collection
      * @param string $dir
      *
-     * @return Mage_Eav_Model_Entity_Attribute_Source_Table
+     * @return $this
      */
     public function addValueSortToCollection($collection, $dir = Varien_Db_Select::SQL_ASC)
     {

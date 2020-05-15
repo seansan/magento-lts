@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -81,7 +81,7 @@ class Mage_XmlConnect_Block_Checkout_Payment_Method_ListApi23 extends Mage_XmlCo
      * Add customer balance details to XML object. API version 23
      *
      * @param Mage_XmlConnect_Model_Simplexml_Element $methodsXmlObj
-     * @return Mage_XmlConnect_Block_Checkout_Payment_Method_ListApi23
+     * @return $this
      */
     public function addCustomerBalanceToXmlObj(Mage_XmlConnect_Model_Simplexml_Element $methodsXmlObj)
     {

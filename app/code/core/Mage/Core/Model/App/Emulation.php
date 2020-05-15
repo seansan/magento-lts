@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -92,6 +92,8 @@ class Mage_Core_Model_App_Emulation extends Varien_Object
             ->setInitialDesign($initialDesign)
             ->setInitialLocaleCode($initialLocaleCode);
 
+        Mage::app()->getTranslator()->init($area, true);
+        
         return $initialEnvironmentInfo;
     }
 
@@ -102,7 +104,7 @@ class Mage_Core_Model_App_Emulation extends Varien_Object
      *
      * @param Varien_Object $initialEnvironmentInfo information about environment of the initial store
      *
-     * @return Mage_Core_Model_App_Emulation
+     * @return $this
      */
     public function stopEnvironmentEmulation(Varien_Object $initialEnvironmentInfo)
     {
@@ -198,7 +200,7 @@ class Mage_Core_Model_App_Emulation extends Varien_Object
      *
      * @param boolean $initialTranslateInline
      *
-     * @return Mage_Core_Model_App_Emulation
+     * @return $this
      */
     protected function _restoreInitialInlineTranslation($initialTranslateInline)
     {
@@ -212,7 +214,7 @@ class Mage_Core_Model_App_Emulation extends Varien_Object
      *
      * @param array $initialDesign
      *
-     * @return Mage_Core_Model_App_Emulation
+     * @return $this
      */
     protected function _restoreInitialDesign(array $initialDesign)
     {
@@ -228,7 +230,7 @@ class Mage_Core_Model_App_Emulation extends Varien_Object
      * @param string $initialLocaleCode
      * @param string $initialArea
      *
-     * @return Mage_Core_Model_App_Emulation
+     * @return $this
      */
     protected function _restoreInitialLocale($initialLocaleCode,
                                              $initialArea = Mage_Core_Model_App_Area::AREA_ADMINHTML)

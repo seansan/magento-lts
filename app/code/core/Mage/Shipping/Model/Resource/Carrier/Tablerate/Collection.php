@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -96,7 +96,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate_Collection extends Mage_Cor
      * Add website filter to collection
      *
      * @param int $websiteId
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate_Collection
+     * @return $this
      */
     public function setWebsiteFilter($websiteId)
     {
@@ -107,7 +107,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate_Collection extends Mage_Cor
      * Add condition name (code) filter to collection
      *
      * @param string $conditionName
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate_Collection
+     * @return $this
      */
     public function setConditionFilter($conditionName)
     {
@@ -118,7 +118,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate_Collection extends Mage_Cor
      * Add country filter to collection
      *
      * @param string $countryId
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate_Collection
+     * @return $this
      */
     public function setCountryFilter($countryId)
     {

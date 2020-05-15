@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -40,7 +40,7 @@ class Mage_Shipping_Model_Rate_Result_Method extends Mage_Shipping_Model_Rate_Re
      * Round shipping carrier's method price
      *
      * @param string|float|int $price
-     * @return Mage_Shipping_Model_Rate_Result_Method
+     * @return $this
      */
     public function setPrice($price)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_ImportExport
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -218,7 +218,7 @@ class Mage_ImportExport_Model_Import_Entity_Product_Type_Configurable
     /**
      * Array of SKU to array of super attribute values for all products.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Product_Type_Configurable
+     * @return $this
      */
     protected function _loadSkuSuperAttributeValues()
     {
@@ -267,7 +267,7 @@ class Mage_ImportExport_Model_Import_Entity_Product_Type_Configurable
     /**
      * Array of SKU to array of super attribute values for all products.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Product_Type_Configurable
+     * @return $this
      */
     protected function _loadSkuSuperData()
     {
@@ -301,7 +301,7 @@ class Mage_ImportExport_Model_Import_Entity_Product_Type_Configurable
      *
      * @param array $superData
      * @param array $superAttributes
-     * @return Mage_ImportExport_Model_Import_Entity_Product_Type_Configurable
+     * @return $this
      */
     protected function _processSuperData(array $superData, array &$superAttributes)
     {

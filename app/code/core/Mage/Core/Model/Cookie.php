@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -52,7 +52,7 @@ class Mage_Core_Model_Cookie
      * Set Store object
      *
      * @param mixed $store
-     * @return Mage_Core_Model_Cookie
+     * @return $this
      */
     public function setStore($store)
     {
@@ -153,7 +153,7 @@ class Mage_Core_Model_Cookie
      * Set cookie lifetime
      *
      * @param int $lifetime
-     * @return Mage_Core_Model_Cookie
+     * @return $this
      */
     public function setLifetime($lifetime)
     {
@@ -203,7 +203,7 @@ class Mage_Core_Model_Cookie
      * @param string $domain
      * @param int|bool $secure
      * @param bool $httponly
-     * @return Mage_Core_Model_Cookie
+     * @return $this
      */
     public function set($name, $value, $period = null, $path = null, $domain = null, $secure = null, $httponly = null)
     {
@@ -252,7 +252,7 @@ class Mage_Core_Model_Cookie
      * @param string $path
      * @param string $domain
      * @param int|bool $secure
-     * @return Mage_Core_Model_Cookie
+     * @return $this
      */
     public function renew($name, $period = null, $path = null, $domain = null, $secure = null, $httponly = null)
     {
@@ -285,7 +285,7 @@ class Mage_Core_Model_Cookie
      * @param string $domain
      * @param int|bool $secure
      * @param int|bool $httponly
-     * @return Mage_Core_Model_Cookie
+     * @return $this
      */
     public function delete($name, $path = null, $domain = null, $secure = null, $httponly = null)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -38,7 +38,7 @@ class Mage_Shipping_Model_Info extends Varien_Object
      * Generating tracking info
      *
      * @param array $hash
-     * @return Mage_Shipping_Model_Info
+     * @return $this
      */
     public function loadByHash($hash)
     {

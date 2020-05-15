@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -393,7 +393,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
      *
      * Method provide cache configuration data without loading store config XML
      *
-     * @return Mage_Core_Model_Config
+     * @return $this
      */
     public function initConfigCache()
     {
@@ -432,7 +432,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
      *
      * @param string $path
      * @param mixed $value
-     * @return Mage_Core_Model_Store
+     * @return $this
      */
     public function setConfig($path, $value)
     {
@@ -717,7 +717,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     /**
      * Check if store is admin store
      *
-     * @return unknown
+     * @return bool
      */
     public function isAdmin()
     {
@@ -1184,7 +1184,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
      *
      * Register indexing event before delete store
      *
-     * @return Mage_Core_Model_Store
+     * @return $this
      */
     protected function _beforeDelete()
     {
@@ -1196,7 +1196,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     /**
      * rewrite in order to clear configuration cache
      *
-     * @return Mage_Core_Model_Store
+     * @return $this
      */
     protected function _afterDelete()
     {
@@ -1208,7 +1208,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     /**
      * Init indexing process after store delete commit
      *
-     * @return Mage_Core_Model_Store
+     * @return $this
      */
     protected function _afterDeleteCommit()
     {
@@ -1220,7 +1220,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     /**
      * Reinit and reset Config Data
      *
-     * @return Mage_Core_Model_Store
+     * @return $this
      */
     public function resetConfig()
     {

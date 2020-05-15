@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -109,7 +109,7 @@ class Mage_Sales_Model_Order_Invoice_Item extends Mage_Core_Model_Abstract
     /**
      * Initialize resource model
      */
-    function _construct()
+    public function _construct()
     {
         $this->_init('sales/order_invoice_item');
     }
@@ -213,7 +213,7 @@ class Mage_Sales_Model_Order_Invoice_Item extends Mage_Core_Model_Abstract
     /**
      * Applying qty to order item
      *
-     * @return Mage_Sales_Model_Order_Invoice_Item
+     * @return $this
      */
     public function register()
     {
@@ -236,7 +236,7 @@ class Mage_Sales_Model_Order_Invoice_Item extends Mage_Core_Model_Abstract
     /**
      * Cancelling invoice item
      *
-     * @return Mage_Sales_Model_Order_Invoice_Item
+     * @return $this
      */
     public function cancel()
     {
@@ -260,7 +260,7 @@ class Mage_Sales_Model_Order_Invoice_Item extends Mage_Core_Model_Abstract
     /**
      * Invoice item row total calculation
      *
-     * @return Mage_Sales_Model_Order_Invoice_Item
+     * @return $this
      */
     public function calcRowTotal()
     {
@@ -305,7 +305,7 @@ class Mage_Sales_Model_Order_Invoice_Item extends Mage_Core_Model_Abstract
     /**
      * Before object save
      *
-     * @return Mage_Sales_Model_Order_Invoice_Item
+     * @return $this
      */
     protected function _beforeSave()
     {
@@ -321,7 +321,7 @@ class Mage_Sales_Model_Order_Invoice_Item extends Mage_Core_Model_Abstract
     /**
      * After object save
      *
-     * @return Mage_Sales_Model_Order_Invoice_Item
+     * @return $this
      */
     protected function _afterSave()
     {

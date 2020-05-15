@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogSearch
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -45,7 +45,7 @@ class Mage_CatalogSearch_Block_Term extends Mage_Core_Block_Template
     /**
      * Load terms and try to sort it by names
      *
-     * @return Mage_CatalogSearch_Block_Term
+     * @return $this
      */
     protected function _loadTerms()
     {

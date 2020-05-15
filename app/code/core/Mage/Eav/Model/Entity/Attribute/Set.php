@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -62,7 +62,7 @@ class Mage_Eav_Model_Entity_Attribute_Set extends Mage_Core_Model_Abstract
      * Init attribute set from skeleton (another attribute set)
      *
      * @param int $skeletonId
-     * @return Mage_Eav_Model_Entity_Attribute_Set
+     * @return $this
      */
     public function initFromSkeleton($skeletonId)
     {
@@ -105,7 +105,7 @@ class Mage_Eav_Model_Entity_Attribute_Set extends Mage_Core_Model_Abstract
      * Collect data for save
      *
      * @param array $data
-     * @return Mage_Eav_Model_Entity_Attribute_Set
+     * @return $this
      */
     public function organizeData($data)
     {
@@ -200,7 +200,7 @@ class Mage_Eav_Model_Entity_Attribute_Set extends Mage_Core_Model_Abstract
      * @param string|Mage_Eav_Model_Entity_Type $entityType
      * @param array $attributes
      * @param int $setId
-     * @return Mage_Eav_Model_Entity_Attribute_Set
+     * @return $this
      */
     public function addSetInfo($entityType, array $attributes, $setId = null)
     {

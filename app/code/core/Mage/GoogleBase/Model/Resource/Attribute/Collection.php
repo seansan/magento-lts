@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_GoogleBase
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -56,7 +56,7 @@ class Mage_GoogleBase_Model_Resource_Attribute_Collection extends Mage_Core_Mode
      *
      * @param int $attributeSetId
      * @param string $targetCountry
-     * @return Mage_GoogleBase_Model_Resource_Attribute_Collection
+     * @return $this
      */
     public function addAttributeSetFilter($attributeSetId, $targetCountry)
     {
@@ -73,7 +73,7 @@ class Mage_GoogleBase_Model_Resource_Attribute_Collection extends Mage_Core_Mode
      * Add type filter
      *
      * @param int $type_id
-     * @return Mage_GoogleBase_Model_Resource_Attribute_Collection
+     * @return $this
      */
     public function addTypeFilter($type_id)
     {
@@ -86,7 +86,7 @@ class Mage_GoogleBase_Model_Resource_Attribute_Collection extends Mage_Core_Mode
      *
      * @param boolean $printQuery
      * @param boolean $logQuery
-     * @return Mage_GoogleBase_Model_Resource_Attribute_Collection
+     * @return $this
      */
     public function load($printQuery = false, $logQuery = false)
     {
@@ -103,7 +103,7 @@ class Mage_GoogleBase_Model_Resource_Attribute_Collection extends Mage_Core_Mode
     /**
      * Join attribute set
      *
-     * @return Mage_GoogleBase_Model_Resource_Attribute_Collection
+     * @return $this
      */
     protected function _joinAttributeSet()
     {

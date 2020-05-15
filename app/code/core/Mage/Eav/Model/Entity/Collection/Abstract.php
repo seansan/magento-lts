@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -177,7 +177,8 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
      * Standard resource collection initalization
      *
      * @param string $model
-     * @return Mage_Core_Model_Mysql4_Collection_Abstract
+     * @param null|string $entityModel
+     * @return $this
      */
     protected function _init($model, $entityModel = null)
     {
@@ -292,7 +293,7 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
      * @see self::_getConditionSql for $condition
      * @param Mage_Eav_Model_Entity_Attribute_Interface|integer|string|array $attribute
      * @param null|string|array $condition
-     * @param string $operator
+     * @param string $joinType
      * @return Mage_Eav_Model_Entity_Collection_Abstract
      */
     public function addAttributeToFilter($attribute, $condition = null, $joinType = 'inner')
@@ -756,7 +757,8 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
     {
         $tableAlias = null;
         if (is_array($table)) {
-            list($tableAlias, $tableName) = each($table);
+            $tableAlias = key($table);
+            $tableName = current($table);
         } else {
             $tableName = $table;
         }
@@ -890,7 +892,7 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
     /**
      * Clone and reset collection
      *
-     * @return Mage_Eav_Model_Entity_Collection_Abstract
+     * @return Varien_Db_Select
      */
     protected function _getAllIdsSelect($limit = null, $offset = null)
     {
@@ -919,7 +921,7 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
      * Retrive all ids sql
      *
      * @deprecated
-     * @return array
+     * @return Varien_Db_Select
      */
     public function getAllIdsSql()
     {
@@ -1127,7 +1129,9 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
      * Retrieve attributes load select
      *
      * @param   string $table
-     * @return  Mage_Eav_Model_Entity_Collection_Abstract
+     * @param array $attributeIds
+     * @return  Varien_Db_Select
+     * @throws Mage_Core_Exception
      */
     protected function _getLoadAttributesSelect($table, $attributeIds = array())
     {

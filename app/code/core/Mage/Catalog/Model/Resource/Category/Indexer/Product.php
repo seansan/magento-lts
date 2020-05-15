@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -96,7 +96,7 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
      * when product was saved and assigned categories was changed.
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_Catalog_Model_Resource_Category_Indexer_Product
+     * @return $this
      */
     public function catalogProductSave(Mage_Index_Model_Event $event)
     {
@@ -150,7 +150,7 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
      * Process Catalog Product mass action
      *
      * @param Mage_Index_Model_Event $event
-     * @return Mage_Catalog_Model_Resource_Category_Indexer_Product
+     * @return $this
      */
     public function catalogProductMassAction(Mage_Index_Model_Event $event)
     {
@@ -433,7 +433,7 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
      *
      * @param null|array $categoryIds
      * @param null|array $productIds
-     * @return Mage_Catalog_Model_Resource_Category_Indexer_Product
+     * @return $this
      */
     protected function _refreshDirectRelations($categoryIds = null, $productIds = null)
     {
@@ -516,7 +516,7 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
      *
      * @param null | array $categoryIds
      * @param null | array $productIds
-     * @return Mage_Catalog_Model_Resource_Category_Indexer_Product
+     * @return $this
      */
     protected function _refreshAnchorRelations($categoryIds = null, $productIds = null)
     {
@@ -619,7 +619,7 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
      * Add product association with root store category for products which are not assigned to any another category
      *
      * @param int | array $productIds
-     * @return Mage_Catalog_Model_Resource_Category_Indexer_Product
+     * @return $this
      */
     protected function _refreshRootRelations($productIds)
     {
@@ -768,7 +768,7 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
     /**
      * Rebuild all index data
      *
-     * @return Mage_Catalog_Model_Resource_Category_Indexer_Product
+     * @return $this
      */
     public function reindexAll()
     {

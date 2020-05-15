@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -480,7 +480,7 @@ abstract class Mage_Shipping_Model_Carrier_Abstract extends Varien_Object
     /**
      * set the number of boxes for shipping
      *
-     * @return weight
+     * @return float
      */
     public function getTotalNumOfBoxes($weight)
     {

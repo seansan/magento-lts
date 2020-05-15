@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_ImportExport
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -236,7 +236,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Delete customers.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _deleteCustomers()
     {
@@ -279,7 +279,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Initialize customer attributes.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _initAttributes()
     {
@@ -306,7 +306,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Initialize customer groups.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _initCustomerGroups()
     {
@@ -319,7 +319,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Initialize existent customers data.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _initCustomers()
     {
@@ -339,7 +339,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Initialize stores hash.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _initStores()
     {
@@ -352,7 +352,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Initialize website values.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _initWebsites()
     {
@@ -367,7 +367,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
     /**
      * Gather and save information about customer entities.
      *
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _saveCustomers()
     {
@@ -479,7 +479,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
      * Save customer attributes.
      *
      * @param array $attributesData
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _saveCustomerAttributes(array $attributesData)
     {
@@ -506,7 +506,7 @@ class Mage_ImportExport_Model_Import_Entity_Customer extends Mage_ImportExport_M
      *
      * @param array $entityRowsIn Row for insert
      * @param array $entityRowsUp Row for update
-     * @return Mage_ImportExport_Model_Import_Entity_Customer
+     * @return $this
      */
     protected function _saveCustomerEntity(array $entityRowsIn, array $entityRowsUp)
     {

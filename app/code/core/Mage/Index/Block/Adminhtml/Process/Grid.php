@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Index
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -55,7 +55,7 @@ class Mage_Index_Block_Adminhtml_Process_Grid extends Mage_Adminhtml_Block_Widge
     /**
      * Prepare grid collection
      *
-     * @return Mage_Index_Block_Adminhtml_Process_Grid
+     * @return $this
      */
     protected function _prepareCollection()
     {
@@ -69,7 +69,7 @@ class Mage_Index_Block_Adminhtml_Process_Grid extends Mage_Adminhtml_Block_Widge
     /**
      * Add name and description to collection elements
      *
-     * @return Mage_Index_Block_Adminhtml_Process_Grid
+     * @return $this
      */
     protected function _afterLoadCollection()
     {
@@ -92,7 +92,7 @@ class Mage_Index_Block_Adminhtml_Process_Grid extends Mage_Adminhtml_Block_Widge
     /**
      * Prepare grid columns
      *
-     * @return Mage_Index_Block_Adminhtml_Process_Grid
+     * @return $this
      */
     protected function _prepareColumns()
     {
@@ -258,7 +258,7 @@ class Mage_Index_Block_Adminhtml_Process_Grid extends Mage_Adminhtml_Block_Widge
     /**
      * Add mass-actions to grid
      *
-     * @return Mage_Index_Block_Adminhtml_Process_Grid
+     * @return $this
      */
     protected function _prepareMassaction()
     {

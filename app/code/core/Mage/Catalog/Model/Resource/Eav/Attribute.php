@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -156,7 +156,7 @@ class Mage_Catalog_Model_Resource_Eav_Attribute extends Mage_Eav_Model_Entity_At
     /**
      * Register indexing event before delete catalog eav attribute
      *
-     * @return Mage_Catalog_Model_Resource_Eav_Attribute
+     * @return $this
      */
     protected function _beforeDelete()
     {
@@ -172,7 +172,7 @@ class Mage_Catalog_Model_Resource_Eav_Attribute extends Mage_Eav_Model_Entity_At
     /**
      * Init indexing process after catalog eav attribute delete commit
      *
-     * @return Mage_Catalog_Model_Resource_Eav_Attribute
+     * @return $this
      */
     protected function _afterDeleteCommit()
     {
@@ -388,7 +388,7 @@ class Mage_Catalog_Model_Resource_Eav_Attribute extends Mage_Eav_Model_Entity_At
     /**
      * Callback function which called after transaction commit in resource model
      *
-     * @return Mage_Catalog_Model_Resource_Eav_Attribute
+     * @return $this
      */
     public function afterCommitCallback()
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Customer
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -45,7 +45,7 @@ class Mage_Customer_Model_Resource_Customer_Collection extends Mage_Eav_Model_En
     /**
      * Group result by customer email
      *
-     * @return Mage_Customer_Model_Resource_Customer_Collection
+     * @return $this
      */
     public function groupByEmail()
     {
@@ -63,7 +63,7 @@ class Mage_Customer_Model_Resource_Customer_Collection extends Mage_Eav_Model_En
     /**
      * Add Name to select
      *
-     * @return Mage_Customer_Model_Resource_Customer_Collection
+     * @return $this
      */
     public function addNameToSelect()
     {

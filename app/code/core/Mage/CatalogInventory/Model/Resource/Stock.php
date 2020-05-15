@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_CatalogInventory
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -97,7 +97,7 @@ class Mage_CatalogInventory_Model_Resource_Stock extends Mage_Core_Model_Resourc
      *
      * @param Mage_CatalogInventory_Model_Stock $stock
      * @param int|array $productIds
-     * @return Mage_CatalogInventory_Model_Resource_Stock
+     * @return $this
      */
     public function lockProductItems($stock, $productIds)
     {
@@ -157,7 +157,7 @@ class Mage_CatalogInventory_Model_Resource_Stock extends Mage_Core_Model_Resourc
      * @param Mage_CatalogInventory_Model_Stock $stock
      * @param array $productQtys
      * @param string $operator +/-
-     * @return Mage_CatalogInventory_Model_Resource_Stock
+     * @return $this
      */
     public function correctItemsQty($stock, $productQtys, $operator = '-')
     {
@@ -196,7 +196,7 @@ class Mage_CatalogInventory_Model_Resource_Stock extends Mage_Core_Model_Resourc
      * add join to select only in stock products
      *
      * @param Mage_Catalog_Model_Resource_Product_Link_Product_Collection $collection
-     * @return Mage_CatalogInventory_Model_Resource_Stock
+     * @return $this
      */
     public function setInStockFilterToCollection($collection)
     {
@@ -349,7 +349,7 @@ class Mage_CatalogInventory_Model_Resource_Stock extends Mage_Core_Model_Resourc
      *
      * @param Mage_Catalog_Model_Resource_Product_Collection $collection
      * @param array $fields
-     * @return Mage_CatalogInventory_Model_Resource_Stock
+     * @return $this
      */
     public function addLowStockFilter(Mage_Catalog_Model_Resource_Product_Collection $collection, $fields)
     {

@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Rating
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -109,7 +109,7 @@ class Mage_Rating_Model_Resource_Rating_Option extends Mage_Core_Model_Resource_
      * Add vote
      *
      * @param Mage_Rating_Model_Rating_Option $option
-     * @return Mage_Rating_Model_Resource_Rating_Option
+     * @return $this
      */
     public function addVote($option)
     {

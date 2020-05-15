@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Persistent
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -74,7 +74,7 @@ class Mage_Persistent_Model_Resource_Session extends Mage_Core_Model_Resource_Db
      * Delete customer persistent session by customer id
      *
      * @param int $customerId
-     * @return Mage_Persistent_Model_Resource_Session
+     * @return $this
      */
     public function deleteByCustomerId($customerId)
     {
@@ -100,7 +100,7 @@ class Mage_Persistent_Model_Resource_Session extends Mage_Core_Model_Resource_Db
      *
      * @param  $websiteId
      * @param  $expiredBefore
-     * @return Mage_Persistent_Model_Resource_Session
+     * @return $this
      */
     public function deleteExpired($websiteId, $expiredBefore)
     {

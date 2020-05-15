@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -47,6 +47,7 @@ class Mage_Core_Model_File_Storage extends Mage_Core_Model_Abstract
     const XML_PATH_STORAGE_MEDIA_DATABASE   = 'default/system/media_storage_configuration/media_database';
     const XML_PATH_MEDIA_RESOURCE_WHITELIST = 'default/system/media_storage_configuration/allowed_resources';
     const XML_PATH_MEDIA_RESOURCE_IGNORED   = 'default/system/media_storage_configuration/ignored_resources';
+    const XML_PATH_MEDIA_LOADED_MODULES     = 'default/system/media_storage_configuration/loaded_modules';
     const XML_PATH_MEDIA_UPDATE_TIME        = 'system/media_storage_configuration/configuration_update_time';
 
 
@@ -130,7 +131,7 @@ class Mage_Core_Model_File_Storage extends Mage_Core_Model_Abstract
      * )
      *
      * @param  array $storage
-     * @return Mage_Core_Model_File_Storage
+     * @return $this
      */
     public function synchronize($storage)
     {
@@ -220,6 +221,11 @@ class Mage_Core_Model_File_Storage extends Mage_Core_Model_Abstract
     {
         $config = array();
         $config['media_directory'] = Mage::getBaseDir('media');
+
+        $loadedModules = (array) Mage::app()->getConfig()->getNode(self::XML_PATH_MEDIA_LOADED_MODULES);
+        foreach ($loadedModules as $key => $loadedModule) {
+            $config['loaded_modules'][] = $loadedModule->getName();
+        }
 
         $allowedResources = (array) Mage::app()->getConfig()->getNode(self::XML_PATH_MEDIA_RESOURCE_WHITELIST);
         foreach ($allowedResources as $key => $allowedResource) {

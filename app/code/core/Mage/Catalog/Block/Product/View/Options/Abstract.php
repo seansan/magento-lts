@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -104,9 +104,10 @@ abstract class Mage_Catalog_Block_Product_View_Options_Abstract extends Mage_Cor
     }
 
     /**
-     * Return formated price
+     * Return formatted price
      *
      * @param array $value
+     * @param bool $flag
      * @return string
      */
     protected function _formatPrice($value, $flag=true)
@@ -149,9 +150,9 @@ abstract class Mage_Catalog_Block_Product_View_Options_Abstract extends Mage_Cor
     /**
      * Get price with including/excluding tax
      *
-     * @param decimal $price
+     * @param float $price
      * @param bool $includingTax
-     * @return decimal
+     * @return float
      */
     public function getPrice($price, $includingTax = null)
     {

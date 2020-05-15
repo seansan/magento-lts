@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -100,8 +100,6 @@ abstract class Mage_Core_Model_Abstract extends Varien_Object
      * Standard model initialization
      *
      * @param string $resourceModel
-     * @param string $idFieldName
-     * @return Mage_Core_Model_Abstract
      */
     protected function _init($resourceModel)
     {

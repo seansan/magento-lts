@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Payment
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -120,7 +120,7 @@ class Mage_Payment_Model_Info extends Mage_Core_Model_Abstract
      *
      * @param string|array $key
      * @param mixed $value
-     * @return Mage_Payment_Model_Info
+     * @return $this
      * @throws Mage_Core_Exception
      */
     public function setAdditionalInformation($key, $value = null)
@@ -156,7 +156,7 @@ class Mage_Payment_Model_Info extends Mage_Core_Model_Abstract
      * Unsetter for entire additional_information value or one of its element by key
      *
      * @param string $key
-     * @return Mage_Payment_Model_Info
+     * @return $this
      */
     public function unsAdditionalInformation($key = null)
     {

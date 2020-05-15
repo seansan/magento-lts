@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Shipping
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -182,7 +182,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate extends Mage_Core_Model_Res
      *
      * @param Varien_Object $object
      * @throws Mage_Core_Exception
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate
+     * @return $this
      */
     public function uploadAndImport(Varien_Object $object)
     {
@@ -276,7 +276,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate extends Mage_Core_Model_Res
     /**
      * Load directory countries
      *
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate
+     * @return $this
      */
     protected function _loadDirectoryCountries()
     {
@@ -300,7 +300,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate extends Mage_Core_Model_Res
     /**
      * Load directory regions
      *
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate
+     * @return $this
      */
     protected function _loadDirectoryRegions()
     {
@@ -422,7 +422,7 @@ class Mage_Shipping_Model_Resource_Carrier_Tablerate extends Mage_Core_Model_Res
      * Save import data batch
      *
      * @param array $data
-     * @return Mage_Shipping_Model_Resource_Carrier_Tablerate
+     * @return $this
      */
     protected function _saveImportData(array $data)
     {

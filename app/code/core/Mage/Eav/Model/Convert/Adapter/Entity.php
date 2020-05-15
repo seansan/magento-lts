@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Eav
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -64,7 +64,7 @@ class Mage_Eav_Model_Convert_Adapter_Entity
     /**
      * @param $attrFilter - $attrArray['attrDB']   = ['like','eq','fromTo','dateFromTo]
      * @param $attrToDb    - attribute name to DB field
-     * @return Mage_Eav_Model_Convert_Adapter_Entity
+     * @return $this
     */
     protected function _parseVars()
     {

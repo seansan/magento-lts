@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Downloadable
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -252,7 +252,7 @@ class Mage_Downloadable_Helper_Download extends Mage_Core_Helper_Abstract
      *
      * @param string $resourceFile
      * @param string $linkType
-     * @return Mage_Downloadable_Helper_Download
+     * @return $this
      */
     public function setResource($resourceFile, $linkType = self::LINK_TYPE_FILE)
     {

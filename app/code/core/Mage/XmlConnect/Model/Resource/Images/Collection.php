@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -81,7 +81,7 @@ class Mage_Xmlconnect_Model_Resource_Images_Collection extends Mage_Core_Model_R
      *
      * @param int $count OPTIONAL The number of rows to return.
      * @param int $offset OPTIONAL Start returning after this many rows.
-     * @return Mage_Xmlconnect_Model_Resource_Images_Collection
+     * @return $this
      */
     public function setLimit($count = null, $offset = null)
     {

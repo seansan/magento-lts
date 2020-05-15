@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Oauth
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -53,10 +53,11 @@ class Mage_Oauth_Adminhtml_Oauth_ConsumerController extends Mage_Adminhtml_Contr
     /**
      * Init titles
      *
-     * @return Mage_Oauth_Adminhtml_Oauth_ConsumerController
+     * @return $this
      */
     public function preDispatch()
     {
+        $this->_setForcedFormKeyActions(array('delete'));
         $this->_title($this->__('System'))
             ->_title($this->__('OAuth'))
             ->_title($this->__('Consumers'));
@@ -268,7 +269,7 @@ class Mage_Oauth_Adminhtml_Oauth_ConsumerController extends Mage_Adminhtml_Contr
      * Set form data
      *
      * @param $data
-     * @return Mage_Oauth_Adminhtml_Oauth_ConsumerController
+     * @return $this
      */
     protected function _setFormData($data)
     {

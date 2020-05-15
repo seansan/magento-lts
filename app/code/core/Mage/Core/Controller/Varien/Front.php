@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -121,7 +121,7 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
     /**
      * Init Front Controller
      *
-     * @return Mage_Core_Controller_Varien_Front
+     * @return $this
      */
     public function init()
     {
@@ -162,7 +162,9 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
 
         $request->setPathInfo()->setDispatched(false);
 
-        $this->_getRequestRewriteController()->rewrite();
+        if (!Mage::app()->getStore()->isAdmin()) {
+            $this->_getRequestRewriteController()->rewrite();
+        }
 
         Varien_Profiler::start('mage::dispatch::routers_match');
         $i = 0;
@@ -253,7 +255,7 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
     /**
      * Apply configuration rewrites to current url
      *
-     * @return Mage_Core_Controller_Varien_Front
+     * @return $this
      * @deprecated since 1.7.0.2. Refactored and moved to Mage_Core_Controller_Request_Rewrite
      */
     public function rewrite()

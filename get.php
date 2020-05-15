@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 if (version_compare(phpversion(), '5.2.0', '<')===true) {
@@ -116,7 +116,7 @@ if (empty($mediaDirectory)) {
         $mageRunCode,
         $mageRunType,
         array('cache' => array('disallow_save' => true)),
-        array('Mage_Core')
+        isset($config['loaded_modules']) ? $config['loaded_modules'] : ['Mage_Core']
     );
 }
 

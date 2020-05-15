@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -56,7 +56,7 @@ class Mage_Catalog_Model_Product_Type_Configurable_Attribute extends Mage_Core_M
      * Add price data to attribute
      *
      * @param array $priceData
-     * @return Mage_Catalog_Model_Product_Type_Configurable_Attribute
+     * @return $this
      */
     public function addPrice($priceData)
     {
@@ -88,7 +88,7 @@ class Mage_Catalog_Model_Product_Type_Configurable_Attribute extends Mage_Core_M
     /**
      * After save process
      *
-     * @return Mage_Catalog_Model_Product_Type_Configurable_Attribute
+     * @return $this
      */
     protected function _afterSave()
     {

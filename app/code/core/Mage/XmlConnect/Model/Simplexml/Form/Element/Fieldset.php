@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -173,7 +173,7 @@ class Mage_XmlConnect_Model_Simplexml_Form_Element_Fieldset
      *
      * @param string $key
      * @param int $direction
-     * @return Mage_XmlConnect_Model_Simplexml_Form_Element_Fieldset
+     * @return $this
      */
     public function setSortElementsByAttribute($key, $direction = SORT_ASC)
     {

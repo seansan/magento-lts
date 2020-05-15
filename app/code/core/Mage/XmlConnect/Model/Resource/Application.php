@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -48,7 +48,7 @@ class Mage_XmlConnect_Model_Resource_Application extends Mage_Core_Model_Resourc
      *
      * @param int $applicationId
      * @param string $status
-     * @return Mage_XmlConnect_Model_Resource_Application
+     * @return $this
      */
     public function updateApplicationStatus($applicationId, $status)
     {
@@ -112,7 +112,7 @@ class Mage_XmlConnect_Model_Resource_Application extends Mage_Core_Model_Resourc
      * Update all applications "updated at" parameter with current date
      *
      * @deprecated will remove in new release
-     * @return Mage_XmlConnect_Model_Resource_Application
+     * @return $this
      */
     public function updateAllAppsUpdatedAtParameter()
     {
@@ -127,7 +127,7 @@ class Mage_XmlConnect_Model_Resource_Application extends Mage_Core_Model_Resourc
      * Update all applications "updated at" parameter with current date
      *
      * @param Mage_XmlConnect_Model_Application $model
-     * @return Mage_XmlConnect_Model_Resource_Application
+     * @return $this
      */
     public function updateUpdatedAtParameter($model)
     {

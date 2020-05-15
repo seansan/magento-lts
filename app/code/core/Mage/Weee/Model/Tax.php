@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Weee
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -296,7 +296,7 @@ class Mage_Weee_Model_Tax extends Mage_Core_Model_Abstract
     /**
      * Update discounts for FPT amounts of all products
      *
-     * @return Mage_Weee_Model_Tax
+     * @return $this
      */
     public function updateDiscountPercents()
     {
@@ -308,7 +308,7 @@ class Mage_Weee_Model_Tax extends Mage_Core_Model_Abstract
      * Update discounts for FPT amounts base on products condiotion
      *
      * @param  mixed $products
-     * @return Mage_Weee_Model_Tax
+     * @return $this
      */
     public function updateProductsDiscountPercent($products)
     {

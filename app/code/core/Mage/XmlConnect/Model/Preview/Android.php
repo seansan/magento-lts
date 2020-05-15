@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -44,7 +44,7 @@ class Mage_XmlConnect_Model_Preview_Android extends Mage_XmlConnect_Model_Previe
      * Set device orientation
      *
      * @param string $orientation
-     * @return Mage_XmlConnect_Model_Preview_Android
+     * @return $this
      */
     public function setOrientation($orientation)
     {
@@ -65,7 +65,7 @@ class Mage_XmlConnect_Model_Preview_Android extends Mage_XmlConnect_Model_Previe
     /**
      * Get application banner image url
      *
-     * @return string
+     * @return array
      */
     public function getBannerImage()
     {

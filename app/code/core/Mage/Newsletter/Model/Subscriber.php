@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Newsletter
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -180,7 +180,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
      * Set the error messages scope for subscription
      *
      * @param boolean $scope
-     * @return Mage_Newsletter_Model_Subscriber
+     * @return $this
      */
 
     public function setMessagesScope($scope)
@@ -260,7 +260,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
      * Load subscriber info by customer
      *
      * @param Mage_Customer_Model_Customer $customer
-     * @return Mage_Newsletter_Model_Subscriber
+     * @return $this
      */
     public function loadByCustomer(Mage_Customer_Model_Customer $customer)
     {
@@ -494,7 +494,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
     /**
      * Sends out confirmation email
      *
-     * @return Mage_Newsletter_Model_Subscriber
+     * @return $this
      */
     public function sendConfirmationRequestEmail()
     {
@@ -513,6 +513,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
         $translate->setTranslateInline(false);
 
         $email = Mage::getModel('core/email_template');
+        $email->setDesignConfig(array('area' => 'frontend', 'store' => $this->getStoreId()));
 
         $email->sendTransactional(
             Mage::getStoreConfig(self::XML_PATH_CONFIRM_EMAIL_TEMPLATE),
@@ -530,7 +531,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
     /**
      * Sends out confirmation success email
      *
-     * @return Mage_Newsletter_Model_Subscriber
+     * @return $this
      */
     public function sendConfirmationSuccessEmail()
     {
@@ -549,6 +550,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
         $translate->setTranslateInline(false);
 
         $email = Mage::getModel('core/email_template');
+        $email->setDesignConfig(array('area' => 'frontend', 'store' => $this->getStoreId()));
 
         $email->sendTransactional(
             Mage::getStoreConfig(self::XML_PATH_SUCCESS_EMAIL_TEMPLATE),
@@ -566,7 +568,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
     /**
      * Sends out unsubsciption email
      *
-     * @return Mage_Newsletter_Model_Subscriber
+     * @return $this
      */
     public function sendUnsubscriptionEmail()
     {
@@ -584,6 +586,7 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
         $translate->setTranslateInline(false);
 
         $email = Mage::getModel('core/email_template');
+        $email->setDesignConfig(array('area' => 'frontend', 'store' => $this->getStoreId()));
 
         $email->sendTransactional(
             Mage::getStoreConfig(self::XML_PATH_UNSUBSCRIBE_EMAIL_TEMPLATE),

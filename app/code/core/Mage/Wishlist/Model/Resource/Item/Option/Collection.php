@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Wishlist
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -61,7 +61,7 @@ class Mage_Wishlist_Model_Resource_Item_Option_Collection extends Mage_Core_Mode
     /**
      * Fill array of options by item and product
      *
-     * @return Mage_Wishlist_Model_Resource_Item_Option_Collection
+     * @return $this
      */
     protected function _afterLoad()
     {
@@ -90,7 +90,7 @@ class Mage_Wishlist_Model_Resource_Item_Option_Collection extends Mage_Core_Mode
      * Apply quote item(s) filter to collection
      *
      * @param  int|array $item
-     * @return Mage_Wishlist_Model_Resource_Item_Option_Collection
+     * @return $this
      */
     public function addItemFilter($item)
     {

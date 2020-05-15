@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -118,7 +118,7 @@ class Mage_Sales_Block_Adminhtml_Billing_Agreement_View_Tab_Orders extends Mage_
     /**
      * Disable massaction in grid
      *
-     * @return Mage_Sales_Block_Adminhtml_Billing_Agreement_View_Tab_Orders
+     * @return $this
      */
     protected function _prepareMassaction()
     {

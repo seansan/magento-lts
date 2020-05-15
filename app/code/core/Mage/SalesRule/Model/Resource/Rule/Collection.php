@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_SalesRule
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -72,7 +72,7 @@ class Mage_SalesRule_Model_Resource_Rule_Collection extends Mage_Rule_Model_Reso
      * @param string|null $now
      * @use $this->addWebsiteGroupDateFilter()
      *
-     * @return Mage_SalesRule_Model_Resource_Rule_Collection
+     * @return $this
      */
     public function setValidationFilter($websiteId, $customerGroupId, $couponCode = '', $now = null)
     {
@@ -177,7 +177,7 @@ class Mage_SalesRule_Model_Resource_Rule_Collection extends Mage_Rule_Model_Reso
     /**
      * Add primary coupon to collection
      *
-     * @return Mage_SalesRule_Model_Resource_Rule_Collection
+     * @return $this
      */
     public function _initSelect()
     {
@@ -196,7 +196,7 @@ class Mage_SalesRule_Model_Resource_Rule_Collection extends Mage_Rule_Model_Reso
      *
      * @param string $attributeCode
      *
-     * @return Mage_SalesRule_Model_Resource_Rule_Collection
+     * @return $this
      */
     public function addAttributeInConditionFilter($attributeCode)
     {
@@ -214,7 +214,7 @@ class Mage_SalesRule_Model_Resource_Rule_Collection extends Mage_Rule_Model_Reso
     /**
      * Excludes price rules with generated specific coupon codes from collection
      *
-     * @return Mage_SalesRule_Model_Resource_Rule_Collection
+     * @return $this
      */
     public function addAllowedSalesRulesFilter()
     {

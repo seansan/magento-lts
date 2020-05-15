@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_XmlConnect
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -86,13 +86,13 @@ class Mage_XmlConnect_Helper_OfflineCatalog extends Mage_Core_Helper_Abstract
     /**
      * Prepare result directory
      *
-     * @return Mage_XmlConnect_Helper_OfflineCatalog
+     * @return $this
      */
     public function prepareResultDirectory()
     {
         $fileModel = $this->_getFileIo();
         $resultDir = $this->_getResultDir();
-        $fileModel->rmdirRecursive($resultDir);
+        $fileModel::rmdirRecursive($resultDir);
         $fileModel->mkdir($resultDir);
         return $this;
     }
@@ -128,7 +128,7 @@ class Mage_XmlConnect_Helper_OfflineCatalog extends Mage_Core_Helper_Abstract
      *
      * @param string $urlPath
      * @param string $output
-     * @return Mage_XmlConnect_Helper_OfflineCatalog
+     * @return $this
      */
     public function addOfflineCatalogData($urlPath, $output)
     {
@@ -146,7 +146,7 @@ class Mage_XmlConnect_Helper_OfflineCatalog extends Mage_Core_Helper_Abstract
      *
      * @param string $fileName
      * @param string $output
-     * @return Mage_XmlConnect_Helper_OfflineCatalog
+     * @return $this
      */
     public function saveCacheFile($fileName, $output)
     {
@@ -202,7 +202,7 @@ class Mage_XmlConnect_Helper_OfflineCatalog extends Mage_Core_Helper_Abstract
     /**
      * Prepare layout
      *
-     * @return Mage_XmlConnect_Helper_OfflineCatalog
+     * @return $this
      */
     protected function _prepareLayout()
     {
@@ -215,7 +215,7 @@ class Mage_XmlConnect_Helper_OfflineCatalog extends Mage_Core_Helper_Abstract
      *
      * Only for PHP 5 >= 5.3.0
      *
-     * @return Mage_XmlConnect_Helper_OfflineCatalog
+     * @return $this
      */
     protected function unsetLayout()
     {
@@ -282,7 +282,7 @@ class Mage_XmlConnect_Helper_OfflineCatalog extends Mage_Core_Helper_Abstract
     /**
      * Render xml object
      *
-     * @return Mage_XmlConnect_Helper_OfflineCatalog
+     * @return $this
      */
     public function renderXmlObject()
     {

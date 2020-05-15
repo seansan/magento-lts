@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright  Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -101,7 +101,7 @@ class Mage_Catalog_Model_Resource_Product_Compare_Item extends Mage_Core_Model_R
     /**
      * Clean compare table
      *
-     * @return Mage_Catalog_Model_Resource_Product_Compare_Item
+     * @return $this
      */
     public function clean()
     {
@@ -134,7 +134,7 @@ class Mage_Catalog_Model_Resource_Product_Compare_Item extends Mage_Core_Model_R
      * Purge visitor data after customer logout
      *
      * @param Mage_Catalog_Model_Product_Compare_Item $object
-     * @return Mage_Catalog_Model_Resource_Product_Compare_Item
+     * @return $this
      */
     public function purgeVisitorByCustomer($object)
     {
@@ -157,7 +157,7 @@ class Mage_Catalog_Model_Resource_Product_Compare_Item extends Mage_Core_Model_R
      * After Login process
      *
      * @param Mage_Catalog_Model_Product_Compare_Item $object
-     * @return Mage_Catalog_Model_Resource_Product_Compare_Item
+     * @return $this
      */
     public function updateCustomerFromVisitor($object)
     {
@@ -225,7 +225,7 @@ class Mage_Catalog_Model_Resource_Product_Compare_Item extends Mage_Core_Model_R
      *
      * @param int $visitorId
      * @param int $customerId
-     * @return Mage_Catalog_Model_Resource_Product_Compare_Item
+     * @return $this
      */
     public function clearItems($visitorId = null, $customerId = null)
     {
